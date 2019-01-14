@@ -1,25 +1,23 @@
 ---
-- &1 !ruby/object:Account
+- !ruby/object:Account
   errors: []
-  file_path: database/accounts.yml
-  name: Name1
-  age: 31
-  login: name1
-  password: '111111'
   card:
   - :type: virtual
-    :number: '5333580890053931'
+    :number: '2518643239784910'
     :balance: 150.0
-  current_account: *1
-- &2 !ruby/object:Account
-  errors: []
   file_path: database/accounts.yml
   name: Name2
   age: 32
   login: name2
   password: '222222'
+- !ruby/object:Account
+  errors: []
   card:
-  - :type: capitalist
-    :number: '5815219248120341'
-    :balance: 1000090.0
-  current_account: *2
+  - :type: usual
+    :number: '1613060849566141'
+    :balance: 50.0
+  file_path: database/accounts.yml
+  name: Name1
+  age: 31
+  login: name1
+  password: '111111'

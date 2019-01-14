@@ -1,4 +1,3 @@
 require_relative 'autoload'
-require_relative 'account'
 
-Account.new.console
+Console.new(Account.new).console

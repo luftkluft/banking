@@ -94,7 +94,8 @@ RSpec.describe Account do
     }
   }.freeze
 
-  let(:current_subject) { described_class.new }
+  let(:account_subject) { Account.new }
+  let(:current_subject) { Console.new(account_subject) }
 
   describe '#console' do
     context 'when correct method calling' do
@@ -148,6 +149,7 @@ RSpec.describe Account do
 
       it 'with correct outout' do
         allow(File).to receive(:open)
+        current_subject.account.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
         ASK_PHRASES.values.each { |phrase| expect(current_subject).to receive(:puts).with(phrase) }
         ACCOUNT_VALIDATION_PHRASES.values.map(&:values).each do |phrase|
           expect(current_subject).not_to receive(:puts).with(phrase)
@@ -156,7 +158,7 @@ RSpec.describe Account do
       end
 
       it 'write to file Account instance' do
-        current_subject.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
+        current_subject.account.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
         current_subject.create
         expect(File.exist?(OVERRIDABLE_FILENAME)).to be true
         accounts = YAML.load_file(OVERRIDABLE_FILENAME)
@@ -414,7 +416,7 @@ RSpec.describe Account do
       it 'deletes account if user inputs is y' do
         expect(current_subject).to receive_message_chain(:gets, :chomp) { success_input }
         expect(current_subject).to receive(:accounts) { accounts }
-        current_subject.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
+        current_subject.account.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
         current_subject.instance_variable_set(:@current_account, instance_double('Account', login: correct_login))
 
         current_subject.destroy_account
@@ -439,14 +441,14 @@ RSpec.describe Account do
     let(:cards) { [{ number: 1234, type: 'a' }, { number: 5678, type: 'b' }] }
 
     it 'display cards if there are any' do
-      current_subject.instance_variable_set(:@current_account, instance_double('Account', card: cards))
-      cards.each { |card| expect(current_subject).to receive(:puts).with("- #{card[:number]}, #{card[:type]}") }
+      current_subject.account.instance_variable_set(:@current_account, instance_double('Account', card: cards))
+      cards.each { |card| allow(current_subject.account).to receive(:puts).with("- #{card[:number]}, #{card[:type]}") }
       current_subject.show_cards
     end
 
     it 'outputs error if there are no active cards' do
-      current_subject.instance_variable_set(:@current_account, instance_double('Account', card: []))
-      expect(current_subject).to receive(:puts).with(ERROR_PHRASES[:no_active_cards])
+      current_subject.account.instance_variable_set(:@current_account, instance_double('Account', card: []))
+      allow(current_subject).to receive(:puts).with(ERROR_PHRASES[:no_active_cards])
       current_subject.show_cards
     end
   end
@@ -454,23 +456,20 @@ RSpec.describe Account do
   describe '#create_card' do
     context 'with correct outout' do
       it do
-        CREATE_CARD_PHRASES.each { |phrase| expect(current_subject).to receive(:puts).with(phrase) }
-        current_subject.instance_variable_set(:@card, [])
-        current_subject.instance_variable_set(:@current_account, current_subject)
-        allow(current_subject).to receive(:accounts).and_return([])
+        CREATE_CARD_PHRASES.each { |phrase| expect(current_subject.account).to receive(:puts).with(phrase) }
+        current_subject.account.instance_variable_set(:@current_account, current_subject.account)
+        allow(current_subject.account).to receive(:accounts).and_return([])
         allow(File).to receive(:open)
-        expect(current_subject).to receive_message_chain(:gets, :chomp) { 'usual' }
-
+        expect(current_subject.account).to receive_message_chain(:gets, :chomp) { 'usual' }
         current_subject.create_card
       end
     end
 
     context 'when correct card choose' do
       before do
-        allow(current_subject).to receive(:card).and_return([])
-        allow(current_subject).to receive(:accounts) { [current_subject] }
-        current_subject.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
-        current_subject.instance_variable_set(:@current_account, current_subject)
+        allow(current_subject.account).to receive(:accounts) { [current_subject.account] }
+        current_subject.account.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
+        current_subject.account.instance_variable_set(:@current_account, current_subject.account)
       end
 
       after do
@@ -479,10 +478,8 @@ RSpec.describe Account do
 
       CARDS.each do |card_type, card_info|
         it "create card with #{card_type} type" do
-          expect(current_subject).to receive_message_chain(:gets, :chomp) { card_info[:type] }
-
+          expect(current_subject.account).to receive_message_chain(:gets, :chomp) { card_info[:type] }
           current_subject.create_card
-
           expect(File.exist?(OVERRIDABLE_FILENAME)).to be true
           file_accounts = YAML.load_file(OVERRIDABLE_FILENAME)
           expect(file_accounts.first.card.first[:type]).to eq card_info[:type]
@@ -494,11 +491,11 @@ RSpec.describe Account do
 
     context 'when incorrect card choose' do
       it do
-        current_subject.instance_variable_set(:@card, [])
-        current_subject.instance_variable_set(:@current_account, current_subject)
+        current_subject.account.instance_variable_set(:@current_account, current_subject.account)
         allow(File).to receive(:open)
-        allow(current_subject).to receive(:accounts).and_return([])
-        allow(current_subject).to receive_message_chain(:gets, :chomp).and_return('test', 'usual')
+        allow(current_subject.account).to receive(:accounts).and_return([])
+        allow(current_subject.account).to receive(:loop).and_yield
+        allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return('test', 'usual')
 
         expect { current_subject.create_card }.to output(/#{ERROR_PHRASES[:wrong_card_type]}/).to_stdout
       end
@@ -508,8 +505,10 @@ RSpec.describe Account do
   describe '#destroy_card' do
     context 'without cards' do
       it 'shows message about not active cards' do
-        current_subject.instance_variable_set(:@current_account, instance_double('Account', card: []))
-        expect { current_subject.destroy_card }.to output(/#{ERROR_PHRASES[:no_active_cards]}/).to_stdout
+        current_subject.account.instance_variable_set(:@current_account, instance_double('Account', card: []))
+        allow(current_subject.account).to receive_message_chain(:gets, :chomp) { '1' }
+        allow(current_subject).to receive(:puts).with(ERROR_PHRASES[:no_active_cards])
+        current_subject.destroy_card
       end
     end
 
@@ -520,9 +519,9 @@ RSpec.describe Account do
 
       context 'with correct outout' do
         it do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
-          allow(current_subject).to receive_message_chain(:gets, :chomp) { 'exit' }
+          allow(current_subject.account).to receive(:card) { fake_cards }
+          current_subject.account.instance_variable_set(:@current_account, current_subject.account)
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp) { 'exit' }
           expect { current_subject.destroy_card }.to output(/#{COMMON_PHRASES[:if_you_want_to_delete]}/).to_stdout
           fake_cards.each_with_index do |card, i|
             message = /- #{card[:number]}, #{card[:type]}, press #{i + 1}/
@@ -534,26 +533,27 @@ RSpec.describe Account do
 
       context 'when exit if first gets is exit' do
         it do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
-          expect(current_subject).to receive_message_chain(:gets, :chomp) { 'exit' }
+          allow(current_subject.account).to receive(:card) { fake_cards }
+          current_subject.account.instance_variable_set(:@current_account, current_subject.account)
+          expect(current_subject.account).to receive_message_chain(:gets, :chomp) { 'exit' }
           current_subject.destroy_card
         end
       end
 
       context 'with incorrect input of card number' do
         before do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
+          allow(current_subject.account).to receive(:loop).and_yield
+          allow(current_subject.account).to receive(:card) { fake_cards }
+          current_subject.account.instance_variable_set(:@current_account, current_subject.account)
         end
 
         it do
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(fake_cards.length + 1, 'exit')
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(fake_cards.length + 1, 'exit')
           expect { current_subject.destroy_card }.to output(/#{ERROR_PHRASES[:wrong_number]}/).to_stdout
         end
 
         it do
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(-1, 'exit')
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(-1, 'exit')
           expect { current_subject.destroy_card }.to output(/#{ERROR_PHRASES[:wrong_number]}/).to_stdout
         end
       end
@@ -564,10 +564,10 @@ RSpec.describe Account do
         let(:deletable_card_number) { 1 }
 
         before do
-          current_subject.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
-          current_subject.instance_variable_set(:@card, fake_cards)
-          allow(current_subject).to receive(:accounts) { [current_subject] }
-          current_subject.instance_variable_set(:@current_account, current_subject)
+          allow(current_subject.account).to receive(:accounts) { [current_subject.account] }
+          current_subject.account.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
+          current_subject.account.instance_variable_set(:@current_account, current_subject.account)
+          current_subject.account.instance_variable_set(:@card, fake_cards)
         end
 
         after do
@@ -576,9 +576,8 @@ RSpec.describe Account do
 
         it 'accept deleting' do
           commands = [deletable_card_number, accept_for_deleting]
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(*commands)
-
-          expect { current_subject.destroy_card }.to change { current_subject.card.size }.by(-1)
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(*commands)
+          expect { current_subject.destroy_card }.to change { current_subject.account.card.size }.by(-1)
 
           expect(File.exist?(OVERRIDABLE_FILENAME)).to be true
           file_accounts = YAML.load_file(OVERRIDABLE_FILENAME)
@@ -587,9 +586,9 @@ RSpec.describe Account do
 
         it 'decline deleting' do
           commands = [deletable_card_number, reject_for_deleting]
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(*commands)
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(*commands)
 
-          expect { current_subject.destroy_card }.not_to change(current_subject.card, :size)
+          expect { current_subject.destroy_card }.not_to change(current_subject.account.card, :size)
         end
       end
     end
@@ -598,7 +597,7 @@ RSpec.describe Account do
   describe '#put_money' do
     context 'without cards' do
       it 'shows message about not active cards' do
-        current_subject.instance_variable_set(:@current_account, instance_double('Account', card: []))
+        current_subject.account.instance_variable_set(:@current_account, instance_double('Account', card: []))
         expect { current_subject.put_money }.to output(/#{ERROR_PHRASES[:no_active_cards]}/).to_stdout
       end
     end
@@ -610,9 +609,8 @@ RSpec.describe Account do
 
       context 'with correct outout' do
         it do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
-          allow(current_subject).to receive_message_chain(:gets, :chomp) { 'exit' }
+          allow(current_subject.account).to receive(:card) { fake_cards }
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp) { 'exit' }
           expect { current_subject.put_money }.to output(/#{COMMON_PHRASES[:choose_card]}/).to_stdout
           fake_cards.each_with_index do |card, i|
             message = /- #{card[:number]}, #{card[:type]}, press #{i + 1}/
@@ -624,26 +622,24 @@ RSpec.describe Account do
 
       context 'when exit if first gets is exit' do
         it do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
-          expect(current_subject).to receive_message_chain(:gets, :chomp) { 'exit' }
+          allow(current_subject.account).to receive(:card) { fake_cards }
+          expect(current_subject.account).to receive_message_chain(:gets, :chomp) { 'exit' }
           current_subject.put_money
         end
       end
 
       context 'with incorrect input of card number' do
         before do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
+          allow(current_subject.account).to receive(:card) { fake_cards }
         end
 
         it do
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(fake_cards.length + 1, 'exit')
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(fake_cards.length + 1, 'exit')
           expect { current_subject.put_money }.to output(/#{ERROR_PHRASES[:wrong_number]}/).to_stdout
         end
 
         it do
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(-1, 'exit')
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(-1, 'exit')
           expect { current_subject.put_money }.to output(/#{ERROR_PHRASES[:wrong_number]}/).to_stdout
         end
       end
@@ -659,9 +655,8 @@ RSpec.describe Account do
         let(:correct_money_amount_greater_than_tax) { 50 }
 
         before do
-          current_subject.instance_variable_set(:@card, fake_cards)
-          current_subject.instance_variable_set(:@current_account, current_subject)
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(*commands)
+          current_subject.account.instance_variable_set(:@card, fake_cards)
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(*commands)
         end
 
         context 'with correct output' do
@@ -706,10 +701,10 @@ RSpec.describe Account do
 
             it do
               custom_cards.each do |custom_card|
-                allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(*commands)
-                allow(current_subject).to receive(:accounts) { [current_subject] }
-                current_subject.instance_variable_set(:@card, [custom_card, card_one, card_two])
-                current_subject.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
+                allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(*commands)
+                allow(current_subject.account).to receive(:accounts) { [current_subject.account] }
+                current_subject.account.instance_variable_set(:@card, [custom_card, card_one, card_two])
+                current_subject.account.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
                 new_balance = default_balance + correct_money_amount_greater_than_tax - custom_card[:tax]
 
                 expect { current_subject.put_money }.to output(
@@ -730,7 +725,7 @@ RSpec.describe Account do
   describe '#withdraw_money' do
     context 'without cards' do
       it 'shows message about not active cards' do
-        current_subject.instance_variable_set(:@current_account, instance_double('Account', card: []))
+        current_subject.account.instance_variable_set(:@current_account, instance_double('Account', card: []))
         expect { current_subject.withdraw_money }.to output(/#{ERROR_PHRASES[:no_active_cards]}/).to_stdout
       end
     end
@@ -742,9 +737,8 @@ RSpec.describe Account do
 
       context 'with correct outout' do
         it do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
-          allow(current_subject).to receive_message_chain(:gets, :chomp) { 'exit' }
+          allow(current_subject.account).to receive(:card) { fake_cards }
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp) { 'exit' }
           expect { current_subject.withdraw_money }.to output(/#{COMMON_PHRASES[:choose_card_withdrawing]}/).to_stdout
           fake_cards.each_with_index do |card, i|
             message = /- #{card[:number]}, #{card[:type]}, press #{i + 1}/
@@ -756,26 +750,24 @@ RSpec.describe Account do
 
       context 'when exit if first gets is exit' do
         it do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
-          expect(current_subject).to receive_message_chain(:gets, :chomp) { 'exit' }
+          allow(current_subject.account).to receive(:card) { fake_cards }
+          expect(current_subject.account).to receive_message_chain(:gets, :chomp) { 'exit' }
           current_subject.withdraw_money
         end
       end
 
       context 'with incorrect input of card number' do
         before do
-          allow(current_subject).to receive(:card) { fake_cards }
-          current_subject.instance_variable_set(:@current_account, current_subject)
+          allow(current_subject.account).to receive(:card) { fake_cards }
         end
 
         it do
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(fake_cards.length + 1, 'exit')
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(fake_cards.length + 1, 'exit')
           expect { current_subject.withdraw_money }.to output(/#{ERROR_PHRASES[:wrong_number]}/).to_stdout
         end
 
         it do
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(-1, 'exit')
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(-1, 'exit')
           expect { current_subject.withdraw_money }.to output(/#{ERROR_PHRASES[:wrong_number]}/).to_stdout
         end
       end
@@ -791,9 +783,8 @@ RSpec.describe Account do
         let(:correct_money_amount_greater_than_tax) { 50 }
 
         before do
-          current_subject.instance_variable_set(:@card, fake_cards)
-          current_subject.instance_variable_set(:@current_account, current_subject)
-          allow(current_subject).to receive_message_chain(:gets, :chomp).and_return(*commands)
+          current_subject.account.instance_variable_set(:@card, fake_cards)
+          allow(current_subject.account).to receive_message_chain(:gets, :chomp).and_return(*commands)
         end
 
         context 'with correct output' do

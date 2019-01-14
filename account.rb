@@ -3,120 +3,14 @@ require 'pry'
 
 class Account
   include InOut
-  attr_accessor :login, :name, :card, :password, :file_path
+  include Uploader
+  attr_accessor :login, :name, :age, :card, :password, :file_path, :errors, :current_account
 
   def initialize
     @errors = []
-    @file_path = 'database/accounts.yml'
-  end
-
-  def console
-      output(I18n.t('hello_message'))
-    # FIRST SCENARIO. IMPROVEMENT NEEDED
-
-    a = gets.chomp
-
-    if a == 'create'
-      create
-    elsif a == 'load'
-      load
-    else
-      exit
-    end
-  end
-
-  def create
-    loop do
-      name_input
-      age_input
-      login_input
-      password_input
-      break unless @errors.length != 0
-      @errors.each do |e|
-        puts e
-      end
-      @errors = []
-    end
-
     @card = []
-    new_accounts = accounts << self
+    @file_path = 'database/accounts.yml'
     @current_account = self
-    File.open(@file_path, 'w') { |f| f.write new_accounts.to_yaml } #Storing
-    main_menu
-  end
-
-  def load
-    loop do
-      if !accounts.any?
-        return create_the_first_account
-      end
-
-      output(I18n.t('ask_phrases.login'))
-      login = input
-      output(I18n.t('ask_phrases.password'))
-      password = input
-
-      if accounts.map { |a| { login: a.login, password: a.password } }.include?({ login: login, password: password })
-        a = accounts.select { |a| login == a.login }.first
-        @current_account = a
-        break
-      else
-        output(I18n.t('error_phrases.user_not_exists'))
-        next
-      end
-    end
-    main_menu
-  end
-
-  def create_the_first_account
-    output(I18n.t('common_phrases.create_first_account'))
-    if input == 'y'
-      return create
-    else
-      return console
-    end
-  end
-
-  def main_menu
-    loop do
-      output(I18n.t('main_menu_message_welcome', name: "#{@current_account.name}"))
-      # output(I18n.t('common_phrases.create_first_account'))
-      puts 'If you want to:'
-      puts '- show all cards - press SC'
-      puts '- create card - press CC'
-      puts '- destroy card - press DC'
-      puts '- put money on card - press PM'
-      puts '- withdraw money on card - press WM'
-      puts '- send money to another card  - press SM'
-      puts '- destroy account - press `DA`'
-      puts '- exit from account - press `exit`'
-
-      command = input
-
-      if command == 'SC' || command == 'CC' || command == 'DC' || command == 'PM' || command == 'WM' || command == 'SM' || command == 'DA' || command == 'exit'
-        if command == 'SC'
-          show_cards
-        elsif command == 'CC'
-          create_card
-        elsif command == 'DC'
-          destroy_card
-        elsif command == 'PM'
-          put_money
-        elsif command == 'WM'
-          withdraw_money
-        elsif command == 'SM'
-          send_money
-        elsif command == 'DA'
-          destroy_account
-          exit
-        elsif command == 'exit'
-          exit
-          break
-        end
-      else
-        output(I18n.t('error_phrases.wrong_command'))
-      end
-    end
   end
 
   def create_card
@@ -278,7 +172,7 @@ class Account
       end
       output(I18n.t('common_phrases.press_exit'))
       loop do
-        answer = gets.chomp
+        answer = input
         break if answer == 'exit'
         if answer&.to_i.to_i <= @current_account.card.length && answer&.to_i.to_i > 0
           current_card = @current_account.card[answer&.to_i.to_i - 1]
@@ -398,90 +292,7 @@ class Account
     end
   end
 
-  def destroy_account
-    output(I18n.t('common_phrases.destroy_account'))
-    a = input
-    if a == 'y'
-      new_accounts = []
-      accounts.each do |ac|
-        if ac.login == @current_account.login
-        else
-          new_accounts.push(ac)
-        end
-      end
-      File.open(@file_path, 'w') { |f| f.write new_accounts.to_yaml } #Storing
-    end
-  end
-
   private
-  # output(I18n.t('ask_phrases.login'))
-  # login = input
-  # output(I18n.t('ask_phrases.password'))
-  # password = input
-
-
-  def name_input
-    output(I18n.t('ask_phrases.name'))
-    # puts 'Enter your name'
-    @name = input
-    unless @name != '' && @name[0].upcase == @name[0]
-      @errors.push(I18n.t('account_validation_phrases.name.first_letter'))
-    end
-  end
-
-  def login_input
-    output(I18n.t('ask_phrases.login'))
-    @login = input
-    if @login == ''
-      @errors.push(I18n.t('account_validation_phrases.login.present'))
-    end
-
-    if @login.length < 4
-      @errors.push(I18n.t('account_validation_phrases.login.longer'))
-    end
-
-    if @login.length > 20
-      @errors.push(I18n.t('account_validation_phrases.login.shorter'))
-    end
-
-    if accounts.map { |a| a.login }.include? @login
-      @errors.push(I18n.t('account_validation_phrases.login.exists'))
-    end
-  end
-
-  def password_input
-    output(I18n.t('ask_phrases.password'))
-    @password = input
-    if @password == ''
-      @errors.push(I18n.t('account_validation_phrases.password.present'))
-    end
-
-    if @password.length < 6
-      @errors.push(I18n.t('account_validation_phrases.password.longer'))
-    end
-
-    if @password.length > 30
-      @errors.push(I18n.t('account_validation_phrases.password.shorter'))
-    end
-  end
-
-  def age_input
-    output(I18n.t('ask_phrases.age'))
-    @age = input
-    if @age.to_i.is_a?(Integer) && @age.to_i >= 23 && @age.to_i <= 90
-      @age = @age.to_i
-    else
-      @errors.push(I18n.t('account_validation_phrases.age.length'))
-    end
-  end
-
-  def accounts
-    if File.exists?('database/accounts.yml')
-      YAML.load_file('database/accounts.yml')
-    else
-      []
-    end
-  end
 
   def withdraw_tax(type, balance, number, amount)
     if type == 'usual'
