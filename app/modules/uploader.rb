@@ -1,6 +1,6 @@
 module Uploader
   def accounts
-    if File.exists?('database/accounts.yml')
+    if File.exist?('database/accounts.yml')
       YAML.load_file('database/accounts.yml')
     else
       []

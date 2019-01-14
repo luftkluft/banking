@@ -94,7 +94,7 @@ RSpec.describe Account do
     }
   }.freeze
 
-  let(:account_subject) { Account.new }
+  let(:account_subject) { described_class.new }
   let(:current_subject) { Console.new(account_subject) }
 
   describe '#console' do
@@ -409,7 +409,9 @@ RSpec.describe Account do
 
     it 'with correct outout' do
       expect(current_subject).to receive_message_chain(:gets, :chomp) {}
-      expect { current_subject.destroy_account }.to output(COMMON_PHRASES[:destroy_account]).to_stdout
+      expect do
+        expect { current_subject.destroy_account }.to output(COMMON_PHRASES[:destroy_account]).to_stdout
+      end.to raise_error SystemExit
     end
 
     context 'when deleting' do
@@ -418,8 +420,7 @@ RSpec.describe Account do
         expect(current_subject).to receive(:accounts) { accounts }
         current_subject.account.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
         current_subject.instance_variable_set(:@current_account, instance_double('Account', login: correct_login))
-
-        current_subject.destroy_account
+        expect { current_subject.destroy_account }.to raise_error SystemExit
 
         expect(File.exist?(OVERRIDABLE_FILENAME)).to be true
         file_accounts = YAML.load_file(OVERRIDABLE_FILENAME)
@@ -429,9 +430,7 @@ RSpec.describe Account do
 
       it 'doesnt delete account' do
         expect(current_subject).to receive_message_chain(:gets, :chomp) { cancel_input }
-
-        current_subject.destroy_account
-
+        expect { current_subject.destroy_account }.to raise_error SystemExit
         expect(File.exist?(OVERRIDABLE_FILENAME)).to be false
       end
     end

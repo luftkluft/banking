@@ -1,7 +1,4 @@
 class Console
-  COMMANDS = { create: 'create', load: 'load', accept: 'y', exit: 'exit', show_cards: 'SC',
-    delete_account: 'DA', card_create: 'CC', card_destroy: 'DC', put_money: 'PM',
-    withdraw_money: 'WM', send_money: 'SM' }.freeze
   include InOut
   include Uploader
   attr_accessor :current_account, :account
@@ -24,7 +21,8 @@ class Console
       age_input
       login_input
       password_input
-      break unless @account.errors.length != 0
+      break if @account.errors.empty?
+
       @account.errors.each do |error|
         puts error
       end
@@ -37,12 +35,12 @@ class Console
     @account.cards = []
     new_accounts = accounts << @account
     @current_account = @account
-    File.open(@account.file_path, 'w') { |f| f.write new_accounts.to_yaml } #Storing
+    File.open(@account.file_path, 'w') { |f| f.write new_accounts.to_yaml } # Storing
   end
 
   def main_menu
     loop do
-      output(I18n.t('main_menu_message_welcome', name: "#{@current_account.name}"))
+      output(I18n.t('main_menu_message_welcome', name: @current_account.name.to_s))
       # output(I18n.t('common_phrases.create_first_account'))
       puts 'If you want to:'
       puts '- show all cards - press SC'
@@ -79,14 +77,14 @@ class Console
 
   def load
     loop do
-      return create_the_first_account if !accounts.any?
+      return create_the_first_account if accounts.none?
 
       output(I18n.t('ask_phrases.login'))
       login = input
       output(I18n.t('ask_phrases.password'))
       password = input
       if accounts.map { |account| { login: account.login, password: account.password } }
-        .include?({ login: login, password: password })
+                 .include?(login: login, password: password)
         account = accounts.select { |account| login == account.login }.first
         @current_account = account
         @account.current_account = @current_account
@@ -126,6 +124,7 @@ class Console
   def destroy_account
     output(I18n.t('common_phrases.destroy_account'))
     remove_account_from_base if input == COMMANDS[:accept]
+    exit
   end
 
   private
@@ -136,7 +135,7 @@ class Console
     @account.errors.push(I18n.t('account_validation_phrases.login.present')) if login == ''
     @account.errors.push(I18n.t('account_validation_phrases.login.longer')) if login.length < 4
     @account.errors.push(I18n.t('account_validation_phrases.login.shorter')) if login.length > 20
-    @account.errors.push(I18n.t('account_validation_phrases.login.exists')) if accounts.map { |a| a.login }.include? login
+    @account.errors.push(I18n.t('account_validation_phrases.login.exists')) if accounts.map(&:login).include? login
     @account.login = login
   end
 
