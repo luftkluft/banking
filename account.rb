@@ -4,11 +4,11 @@ require 'pry'
 class Account
   include InOut
   include Uploader
-  attr_accessor :login, :name, :age, :card, :password, :file_path, :errors, :current_account
+  attr_accessor :login, :name, :age, :cards, :password, :file_path, :errors, :current_account
 
   def initialize
     @errors = []
-    @card = []
+    @cards = []
     @file_path = 'database/accounts.yml'
     @current_account = self
   end
@@ -38,8 +38,8 @@ class Account
             balance: 150.00
           }
         end
-        cards = @current_account.card << card
-        @current_account.card = cards #important!!!
+        cards = @current_account.cards << card
+        @current_account.cards = cards #important!!!
         new_accounts = []
         accounts.each do |ac|
           if ac.login == @current_account.login
@@ -58,9 +58,9 @@ class Account
 
   def destroy_card
     loop do
-      if @current_account.card.any?
+      if @current_account.cards.any?
         output(I18n.t('common_phrases.if_you_want_to_delete'))
-        @current_account.card.each_with_index do |c, i|
+        @current_account.cards.each_with_index do |c, i|
           output(I18n.t('common_phrases.show_cards_for', number: "#{c[:number]}",
                                                         type: "#{c[:type]}", 
                                                         index: "#{i + 1}"))
@@ -69,12 +69,12 @@ class Account
         output(I18n.t('common_phrases.press_exit'))
         answer = input
         break if answer == 'exit'
-        if answer&.to_i.to_i <= @current_account.card.length && answer&.to_i.to_i > 0
+        if answer&.to_i.to_i <= @current_account.cards.length && answer&.to_i.to_i > 0
           output(I18n.t('common_phrases.destroy_card',
-            card: "#{@current_account.card[answer&.to_i.to_i - 1][:number]}"))
+            card: "#{@current_account.cards[answer&.to_i.to_i - 1][:number]}"))
           a2 = input
           if a2 == 'y'
-            @current_account.card.delete_at(answer&.to_i.to_i - 1)
+            @current_account.cards.delete_at(answer&.to_i.to_i - 1)
             new_accounts = []
             accounts.each do |ac|
               if ac.login == @current_account.login
@@ -99,8 +99,8 @@ class Account
   end
 
   def show_cards
-    if @current_account.card.any?
-      @current_account.card.each do |c|
+    if @current_account.cards.any?
+      @current_account.cards.each do |c|
         output(I18n.t('common_phrases.show_cards', number: "#{c[:number]}", type: "#{c[:type]}"))
       end
     else
@@ -111,8 +111,8 @@ class Account
   def withdraw_money
     puts 'Choose the card for withdrawing:'
     answer, a2, a3 = nil #answers for gets.chomp
-    if @current_account.card.any?
-      @current_account.card.each_with_index do |c, i|
+    if @current_account.cards.any?
+      @current_account.cards.each_with_index do |c, i|
         output(I18n.t('common_phrases.show_cards_for', number: "#{c[:number]}",
           type: "#{c[:type]}", 
           index: "#{i + 1}"))
@@ -121,8 +121,8 @@ class Account
       loop do
         answer = input
         break if answer == 'exit'
-        if answer&.to_i.to_i <= @current_account.card.length && answer&.to_i.to_i > 0
-          current_card = @current_account.card[answer&.to_i.to_i - 1]
+        if answer&.to_i.to_i <= @current_account.cards.length && answer&.to_i.to_i > 0
+          current_card = @current_account.cards[answer&.to_i.to_i - 1]
           loop do
             output(I18n.t('operations.amount.withdraw_money'))
             a2 = input
@@ -130,7 +130,7 @@ class Account
               money_left = current_card[:balance] - a2&.to_i.to_i - withdraw_tax(current_card[:type], current_card[:balance], current_card[:number], a2&.to_i.to_i)
               if money_left > 0
                 current_card[:balance] = money_left
-                @current_account.card[answer&.to_i.to_i - 1] = current_card
+                @current_account.cards[answer&.to_i.to_i - 1] = current_card
                 new_accounts = []
                 accounts.each do |ac|
                   if ac.login == @current_account.login
@@ -164,8 +164,8 @@ class Account
   def put_money
     puts 'Choose the card for putting:'
 
-    if @current_account.card.any?
-      @current_account.card.each_with_index do |c, i|
+    if @current_account.cards.any?
+      @current_account.cards.each_with_index do |c, i|
         output(I18n.t('common_phrases.show_cards_for', number: "#{c[:number]}",
           type: "#{c[:type]}", 
           index: "#{i + 1}"))
@@ -174,8 +174,8 @@ class Account
       loop do
         answer = input
         break if answer == 'exit'
-        if answer&.to_i.to_i <= @current_account.card.length && answer&.to_i.to_i > 0
-          current_card = @current_account.card[answer&.to_i.to_i - 1]
+        if answer&.to_i.to_i <= @current_account.cards.length && answer&.to_i.to_i > 0
+          current_card = @current_account.cards[answer&.to_i.to_i - 1]
           loop do
             output(I18n.t('operations.amount.put_money'))
             a2 = input
@@ -186,7 +186,7 @@ class Account
               else
                 new_money_amount = current_card[:balance] + a2&.to_i.to_i - put_tax(current_card[:type], current_card[:balance], current_card[:number], a2&.to_i.to_i)
                 current_card[:balance] = new_money_amount
-                @current_account.card[answer&.to_i.to_i - 1] = current_card
+                @current_account.cards[answer&.to_i.to_i - 1] = current_card
                 new_accounts = []
                 accounts.each do |ac|
                   if ac.login == @current_account.login
@@ -216,8 +216,8 @@ class Account
 
   def send_money
     output(I18n.t('operations.send_money'))
-    if @current_account.card.any?
-      @current_account.card.each_with_index do |c, i|
+    if @current_account.cards.any?
+      @current_account.cards.each_with_index do |c, i|
         output(I18n.t('common_phrases.show_cards_for', number: "#{c[:number]}",
           type: "#{c[:type]}", 
           index: "#{i + 1}"))
@@ -225,8 +225,8 @@ class Account
       output(I18n.t('common_phrases.press_exit'))
       answer = input
       exit if answer == 'exit'
-      if answer&.to_i.to_i <= @current_account.card.length && answer&.to_i.to_i > 0
-        sender_card = @current_account.card[answer&.to_i.to_i - 1]
+      if answer&.to_i.to_i <= @current_account.cards.length && answer&.to_i.to_i > 0
+        sender_card = @current_account.cards[answer&.to_i.to_i - 1]
       else
         output(I18n.t('error_phrases.hoose_correct_card'))
         return
@@ -238,7 +238,7 @@ class Account
     output(I18n.t('common_phrases.recipient_card'))
     a2 = input
     if a2.length > 15 && a2.length < 17
-      all_cards = accounts.map(&:card).flatten
+      all_cards = accounts.map(&:cards).flatten
       if all_cards.select { |card| card[:number] == a2 }.any?
         recipient_card = all_cards.select { |card| card[:number] == a2 }.first
       else
@@ -263,21 +263,21 @@ class Account
           output(I18n.t('error_phrases.no_money_send'))
         else
           sender_card[:balance] = sender_balance
-          @current_account.card[answer&.to_i.to_i - 1] = sender_card
+          @current_account.cards[answer&.to_i.to_i - 1] = sender_card
           new_accounts = []
           accounts.each do |ac|
             if ac.login == @current_account.login
               new_accounts.push(@current_account)
-            elsif ac.card.map { |card| card[:number] }.include? a2
+            elsif ac.cards.map { |card| card[:number] }.include? a2
               recipient = ac
               new_recipient_cards = []
-              recipient.card.each do |card|
+              recipient.cards.each do |card|
                 if card[:number] == a2
                   card[:balance] = recipient_balance
                 end
                 new_recipient_cards.push(card)
               end
-              recipient.card = new_recipient_cards
+              recipient.cards = new_recipient_cards
               new_accounts.push(recipient)
             end
           end

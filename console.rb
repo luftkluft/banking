@@ -31,7 +31,7 @@ class Console
       end
       @account.errors = []
     end
-    @account.card = []
+    @account.cards = []
     new_accounts = accounts << @account
 #    @current_account = @account
     File.open(@account.file_path, 'w') { |f| f.write new_accounts.to_yaml } #Storing

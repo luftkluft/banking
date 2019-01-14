@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-13T20:03:20+03:00">2019-01-13T20:03:20+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-13T21:24:32+03:00">2019-01-13T21:24:32+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -53,7 +53,7 @@
       <tr>
         <td class="strong"><a href="#7213832a1eb5eb45ab0581071ca6a23f4fda4c66" class="src_link" title="account.rb">account.rb</a></td>
         <td class="red strong">60.09 %</td>
-        <td>521</td>
+        <td>329</td>
         <td>213</td>
         <td>128</td>
         <td>85</td>
@@ -73,7 +73,7 @@
       <tr>
         <td class="strong"><a href="#cade035502395227d1938e9f53123884caa1d094" class="src_link" title="app/modules/uploader.rb">app/modules/uploader.rb</a></td>
         <td class="red strong">40.0 %</td>
-        <td>27</td>
+        <td>9</td>
         <td>5</td>
         <td>2</td>
         <td>3</td>
@@ -179,7 +179,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  attr_accessor :login, :name, :age, :card, :password, :file_path, :errors, :current_account</code>
+          <code class="ruby">  attr_accessor :login, :name, :age, :cards, :password, :file_path, :errors, :current_account</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -203,7 +203,7 @@
         <li class="covered" data-hits="58" data-linenumber="11">
           <span class="hits">58</span>
           
-          <code class="ruby">    @card = []</code>
+          <code class="ruby">    @cards = []</code>
         </li>
       
         <li class="covered" data-hits="58" data-linenumber="12">
@@ -230,3037 +230,1885 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">  # def console</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">  #     output(I18n.t(&#39;hello_message&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">  #   # FIRST SCENARIO. IMPROVEMENT NEEDED</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">  #   a = gets.chomp</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">  #   if a == &#39;create&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">  #     create</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby">  #   elsif a == &#39;load&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  #     load</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">  #   else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">  #     exit</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">  # def create</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">  #   loop do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby">  #     name_input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">  #     age_input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">  #     login_input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">  #     password_input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">  #     break unless @errors.length != 0</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">  #     @errors.each do |e|</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">  #       puts e</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">  #     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">  #     @errors = []</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">  #   @card = []</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
-          <code class="ruby">  #   new_accounts = accounts &lt;&lt; self</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby">  #   @current_account = self</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">  #   File.open(@file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby">  #   main_menu</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby">  # def load</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">  #   loop do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">  #     if !accounts.any?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">  #       return create_the_first_account</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby">  #     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby">  #     output(I18n.t(&#39;ask_phrases.login&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">  #     login = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
-          <code class="ruby">  #     output(I18n.t(&#39;ask_phrases.password&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby">  #     password = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">  #     if accounts.map { |a| { login: a.login, password: a.password } }.include?({ login: login, password: password })</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby">  #       a = accounts.select { |a| login == a.login }.first</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
-          
-          
-          <code class="ruby">  #       @current_account = a</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby">  #       break</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
-          <code class="ruby">  #     else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
-          
-          
-          <code class="ruby">  #       output(I18n.t(&#39;error_phrases.user_not_exists&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby">  #       next</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby">  #     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="72">
-          
-          
-          <code class="ruby">  #   main_menu</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="74">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby">  # def create_the_first_account</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="76">
-          
-          
-          <code class="ruby">  #   output(I18n.t(&#39;common_phrases.create_first_account&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby">  #   if input == &#39;y&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
-          
-          
-          <code class="ruby">  #     return create</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="79">
-          
-          
-          <code class="ruby">  #   else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
-          
-          
-          <code class="ruby">  #     return console</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="84">
-          
-          
-          <code class="ruby">  # def main_menu</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="85">
-          
-          
-          <code class="ruby">  #   loop do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="86">
-          
-          
-          <code class="ruby">  #     # output(I18n.t(&#39;common_phrases.create_first_account&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="87">
-          
-          
-          <code class="ruby">  #     puts &#39;If you want to:&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="88">
-          
-          
-          <code class="ruby">  #     puts &#39;- show all cards - press SC&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="89">
-          
-          
-          <code class="ruby">  #     puts &#39;- create card - press CC&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="90">
-          
-          
-          <code class="ruby">  #     puts &#39;- destroy card - press DC&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="91">
-          
-          
-          <code class="ruby">  #     puts &#39;- put money on card - press PM&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="92">
-          
-          
-          <code class="ruby">  #     puts &#39;- withdraw money on card - press WM&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="93">
-          
-          
-          <code class="ruby">  #     puts &#39;- send money to another card  - press SM&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby">  #     puts &#39;- destroy account - press `DA`&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="95">
-          
-          
-          <code class="ruby">  #     puts &#39;- exit from account - press `exit`&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="96">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="97">
-          
-          
-          <code class="ruby">  #     command = gets.chomp</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="98">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
-          
-          
-          <code class="ruby">  #     if command == &#39;SC&#39; || command == &#39;CC&#39; || command == &#39;DC&#39; || command == &#39;PM&#39; || command == &#39;WM&#39; || command == &#39;SM&#39; || command == &#39;DA&#39; || command == &#39;exit&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby">  #       if command == &#39;SC&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
-          
-          
-          <code class="ruby">  #         show_cards</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
-          
-          
-          <code class="ruby">  #       elsif command == &#39;CC&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="103">
-          
-          
-          <code class="ruby">  #         create_card</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="104">
-          
-          
-          <code class="ruby">  #       elsif command == &#39;DC&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="105">
-          
-          
-          <code class="ruby">  #         destroy_card</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="106">
-          
-          
-          <code class="ruby">  #       elsif command == &#39;PM&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby">  #         put_money</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
-          
-          
-          <code class="ruby">  #       elsif command == &#39;WM&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="109">
-          
-          
-          <code class="ruby">  #         withdraw_money</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="110">
-          
-          
-          <code class="ruby">  #       elsif command == &#39;SM&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="111">
-          
-          
-          <code class="ruby">  #         send_money</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="112">
-          
-          
-          <code class="ruby">  #       elsif command == &#39;DA&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="113">
-          
-          
-          <code class="ruby">  #         destroy_account</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="114">
-          
-          
-          <code class="ruby">  #         exit</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="115">
-          
-          
-          <code class="ruby">  #       elsif command == &#39;exit&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="116">
-          
-          
-          <code class="ruby">  #         exit</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="117">
-          
-          
-          <code class="ruby">  #         break</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="118">
-          
-          
-          <code class="ruby">  #       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="119">
-          
-          
-          <code class="ruby">  #     else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="120">
-          
-          
-          <code class="ruby">  #       output(I18n.t(&#39;error_phrases.wrong_command&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="121">
-          
-          
-          <code class="ruby">  #     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="122">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="123">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="124">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="125">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">  def create_card</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="126">
+        <li class="covered" data-hits="5" data-linenumber="17">
           <span class="hits">5</span>
           
           <code class="ruby">    loop do</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="127">
+        <li class="covered" data-hits="5" data-linenumber="18">
           <span class="hits">5</span>
           
           <code class="ruby">      output(I18n.t(&#39;could_create_one&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="129">
+        <li class="covered" data-hits="5" data-linenumber="20">
           <span class="hits">5</span>
           
           <code class="ruby">      ct = input</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="130">
+        <li class="covered" data-hits="5" data-linenumber="21">
           <span class="hits">5</span>
           
           <code class="ruby">      if ct == &#39;usual&#39; || ct == &#39;capitalist&#39; || ct == &#39;virtual&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="131">
+        <li class="covered" data-hits="4" data-linenumber="22">
           <span class="hits">4</span>
           
           <code class="ruby">        if ct == &#39;usual&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="132">
+        <li class="covered" data-hits="2" data-linenumber="23">
           <span class="hits">2</span>
           
           <code class="ruby">          card = {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="133">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">            type: &#39;usual&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="32" data-linenumber="134">
+        <li class="covered" data-hits="32" data-linenumber="25">
           <span class="hits">32</span>
           
           <code class="ruby">            number: 16.times.map{rand(10)}.join,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="135">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">            balance: 50.00</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="136">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">          }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="137">
+        <li class="covered" data-hits="2" data-linenumber="28">
           <span class="hits">2</span>
           
           <code class="ruby">        elsif ct == &#39;capitalist&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="138">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">          card = {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="139">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">            type: &#39;capitalist&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="140">
+        <li class="covered" data-hits="16" data-linenumber="31">
           <span class="hits">16</span>
           
           <code class="ruby">            number: 16.times.map{rand(10)}.join,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="141">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">            balance: 100.00</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="142">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">          }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="143">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">        elsif ct == &#39;virtual&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="144">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">          card = {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="145">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">            type: &#39;virtual&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="146">
+        <li class="covered" data-hits="16" data-linenumber="37">
           <span class="hits">16</span>
           
           <code class="ruby">            number: 16.times.map{rand(10)}.join,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="147">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">            balance: 150.00</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">          }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="149">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="150">
+        <li class="covered" data-hits="4" data-linenumber="41">
           <span class="hits">4</span>
           
-          <code class="ruby">        cards = @current_account.card &lt;&lt; card</code>
+          <code class="ruby">        cards = @current_account.cards &lt;&lt; card</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="151">
+        <li class="covered" data-hits="4" data-linenumber="42">
           <span class="hits">4</span>
           
-          <code class="ruby">        @current_account.card = cards #important!!!</code>
+          <code class="ruby">        @current_account.cards = cards #important!!!</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="152">
+        <li class="covered" data-hits="4" data-linenumber="43">
           <span class="hits">4</span>
           
           <code class="ruby">        new_accounts = []</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="153">
+        <li class="covered" data-hits="4" data-linenumber="44">
           <span class="hits">4</span>
           
           <code class="ruby">        accounts.each do |ac|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="154">
+        <li class="covered" data-hits="3" data-linenumber="45">
           <span class="hits">3</span>
           
           <code class="ruby">          if ac.login == @current_account.login</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="155">
+        <li class="covered" data-hits="3" data-linenumber="46">
           <span class="hits">3</span>
           
           <code class="ruby">            new_accounts.push(@current_account)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="156">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">          else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="157">
+        <li class="missed" data-hits="0" data-linenumber="48">
           
           
           <code class="ruby">            new_accounts.push(ac)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="159">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="160">
+        <li class="covered" data-hits="7" data-linenumber="51">
           <span class="hits">7</span>
           
           <code class="ruby">        File.open(@file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="161">
+        <li class="covered" data-hits="4" data-linenumber="52">
           <span class="hits">4</span>
           
           <code class="ruby">        break</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="162">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="163">
+        <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
           <code class="ruby">        output(I18n.t(&#39;error_phrases.wrong_card_type&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="164">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="165">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="166">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="167">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="168">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy_card</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="169">
+        <li class="covered" data-hits="10" data-linenumber="60">
           <span class="hits">10</span>
           
           <code class="ruby">    loop do</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="170">
+        <li class="covered" data-hits="10" data-linenumber="61">
           <span class="hits">10</span>
           
-          <code class="ruby">      if @current_account.card.any?</code>
+          <code class="ruby">      if @current_account.cards.any?</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="171">
+        <li class="covered" data-hits="9" data-linenumber="62">
           <span class="hits">9</span>
           
           <code class="ruby">        output(I18n.t(&#39;common_phrases.if_you_want_to_delete&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="172">
+        <li class="covered" data-hits="9" data-linenumber="63">
           <span class="hits">9</span>
           
-          <code class="ruby">        @current_account.card.each_with_index do |c, i|</code>
+          <code class="ruby">        @current_account.cards.each_with_index do |c, i|</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="173">
+        <li class="covered" data-hits="18" data-linenumber="64">
           <span class="hits">18</span>
           
           <code class="ruby">          output(I18n.t(&#39;common_phrases.show_cards_for&#39;, number: &quot;#{c[:number]}&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="174">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">                                                        type: &quot;#{c[:type]}&quot;, </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="175">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">                                                        index: &quot;#{i + 1}&quot;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="176">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="177">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="178">
+        <li class="covered" data-hits="9" data-linenumber="69">
           <span class="hits">9</span>
           
           <code class="ruby">        output(I18n.t(&#39;common_phrases.press_exit&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="179">
+        <li class="covered" data-hits="9" data-linenumber="70">
           <span class="hits">9</span>
           
           <code class="ruby">        answer = input</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="180">
+        <li class="covered" data-hits="9" data-linenumber="71">
           <span class="hits">9</span>
           
           <code class="ruby">        break if answer == &#39;exit&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="181">
+        <li class="covered" data-hits="4" data-linenumber="72">
           <span class="hits">4</span>
           
-          <code class="ruby">        if answer&amp;.to_i.to_i &lt;= @current_account.card.length &amp;&amp; answer&amp;.to_i.to_i &gt; 0</code>
+          <code class="ruby">        if answer&amp;.to_i.to_i &lt;= @current_account.cards.length &amp;&amp; answer&amp;.to_i.to_i &gt; 0</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="182">
+        <li class="covered" data-hits="2" data-linenumber="73">
           <span class="hits">2</span>
           
           <code class="ruby">          output(I18n.t(&#39;common_phrases.destroy_card&#39;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="183">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">            card: &quot;#{@current_account.card[answer&amp;.to_i.to_i - 1][:number]}&quot;))</code>
+          <code class="ruby">            card: &quot;#{@current_account.cards[answer&amp;.to_i.to_i - 1][:number]}&quot;))</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="184">
+        <li class="covered" data-hits="2" data-linenumber="75">
           <span class="hits">2</span>
           
           <code class="ruby">          a2 = input</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="185">
+        <li class="covered" data-hits="2" data-linenumber="76">
           <span class="hits">2</span>
           
           <code class="ruby">          if a2 == &#39;y&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="186">
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">            @current_account.card.delete_at(answer&amp;.to_i.to_i - 1)</code>
+          <code class="ruby">            @current_account.cards.delete_at(answer&amp;.to_i.to_i - 1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="187">
+        <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
           <code class="ruby">            new_accounts = []</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="188">
+        <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
           <code class="ruby">            accounts.each do |ac|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="189">
+        <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
           <code class="ruby">              if ac.login == @current_account.login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="190">
+        <li class="covered" data-hits="1" data-linenumber="81">
           <span class="hits">1</span>
           
           <code class="ruby">                new_accounts.push(@current_account)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="191">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">              else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="192">
+        <li class="missed" data-hits="0" data-linenumber="83">
           
           
           <code class="ruby">                new_accounts.push(ac)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="193">
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">              end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="194">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="195">
+        <li class="covered" data-hits="2" data-linenumber="86">
           <span class="hits">2</span>
           
           <code class="ruby">            File.open(@file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="196">
+        <li class="covered" data-hits="1" data-linenumber="87">
           <span class="hits">1</span>
           
           <code class="ruby">            break</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="197">
+        <li class="never" data-hits="" data-linenumber="88">
           
           
           <code class="ruby">          else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="198">
+        <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
           <code class="ruby">            return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="199">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="200">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="201">
+        <li class="covered" data-hits="2" data-linenumber="92">
           <span class="hits">2</span>
           
           <code class="ruby">          output(I18n.t(&#39;error_phrases.wrong_number&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="202">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="203">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="204">
+        <li class="covered" data-hits="1" data-linenumber="95">
           <span class="hits">1</span>
           
           <code class="ruby">        output(I18n.t(&#39;error_phrases.zero_cards&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="205">
+        <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
           <code class="ruby">        break</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="206">
+        <li class="never" data-hits="" data-linenumber="97">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="207">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="208">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="209">
+        <li class="never" data-hits="" data-linenumber="100">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="210">
+        <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
           <code class="ruby">  def show_cards</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="211">
+        <li class="covered" data-hits="2" data-linenumber="102">
           <span class="hits">2</span>
           
-          <code class="ruby">    if @current_account.card.any?</code>
+          <code class="ruby">    if @current_account.cards.any?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="212">
+        <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
-          <code class="ruby">      @current_account.card.each do |c|</code>
+          <code class="ruby">      @current_account.cards.each do |c|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="213">
+        <li class="covered" data-hits="2" data-linenumber="104">
           <span class="hits">2</span>
           
           <code class="ruby">        output(I18n.t(&#39;common_phrases.show_cards&#39;, number: &quot;#{c[:number]}&quot;, type: &quot;#{c[:type]}&quot;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="214">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="215">
+        <li class="never" data-hits="" data-linenumber="106">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="216">
+        <li class="covered" data-hits="1" data-linenumber="107">
           <span class="hits">1</span>
           
           <code class="ruby">      output(I18n.t(&#39;error_phrases.zero_cards&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="217">
+        <li class="never" data-hits="" data-linenumber="108">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="218">
+        <li class="never" data-hits="" data-linenumber="109">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="219">
+        <li class="never" data-hits="" data-linenumber="110">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="220">
+        <li class="covered" data-hits="1" data-linenumber="111">
           <span class="hits">1</span>
           
           <code class="ruby">  def withdraw_money</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="221">
+        <li class="covered" data-hits="9" data-linenumber="112">
           <span class="hits">9</span>
           
           <code class="ruby">    puts &#39;Choose the card for withdrawing:&#39;</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="222">
+        <li class="covered" data-hits="9" data-linenumber="113">
           <span class="hits">9</span>
           
           <code class="ruby">    answer, a2, a3 = nil #answers for gets.chomp</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="223">
+        <li class="covered" data-hits="9" data-linenumber="114">
           <span class="hits">9</span>
           
-          <code class="ruby">    if @current_account.card.any?</code>
+          <code class="ruby">    if @current_account.cards.any?</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="224">
+        <li class="covered" data-hits="8" data-linenumber="115">
           <span class="hits">8</span>
           
-          <code class="ruby">      @current_account.card.each_with_index do |c, i|</code>
+          <code class="ruby">      @current_account.cards.each_with_index do |c, i|</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="225">
+        <li class="covered" data-hits="16" data-linenumber="116">
           <span class="hits">16</span>
           
           <code class="ruby">        output(I18n.t(&#39;common_phrases.show_cards_for&#39;, number: &quot;#{c[:number]}&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="226">
+        <li class="never" data-hits="" data-linenumber="117">
           
           
           <code class="ruby">          type: &quot;#{c[:type]}&quot;, </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="227">
+        <li class="never" data-hits="" data-linenumber="118">
           
           
           <code class="ruby">          index: &quot;#{i + 1}&quot;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="228">
+        <li class="never" data-hits="" data-linenumber="119">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="229">
+        <li class="covered" data-hits="8" data-linenumber="120">
           <span class="hits">8</span>
           
           <code class="ruby">      output(I18n.t(&#39;common_phrases.press_exit&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="230">
+        <li class="covered" data-hits="8" data-linenumber="121">
           <span class="hits">8</span>
           
           <code class="ruby">      loop do</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="231">
+        <li class="covered" data-hits="8" data-linenumber="122">
           <span class="hits">8</span>
           
           <code class="ruby">        answer = input</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="232">
+        <li class="covered" data-hits="8" data-linenumber="123">
           <span class="hits">8</span>
           
           <code class="ruby">        break if answer == &#39;exit&#39;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="233">
+        <li class="covered" data-hits="3" data-linenumber="124">
           <span class="hits">3</span>
           
-          <code class="ruby">        if answer&amp;.to_i.to_i &lt;= @current_account.card.length &amp;&amp; answer&amp;.to_i.to_i &gt; 0</code>
+          <code class="ruby">        if answer&amp;.to_i.to_i &lt;= @current_account.cards.length &amp;&amp; answer&amp;.to_i.to_i &gt; 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="234">
+        <li class="covered" data-hits="1" data-linenumber="125">
           <span class="hits">1</span>
           
-          <code class="ruby">          current_card = @current_account.card[answer&amp;.to_i.to_i - 1]</code>
+          <code class="ruby">          current_card = @current_account.cards[answer&amp;.to_i.to_i - 1]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="235">
+        <li class="covered" data-hits="1" data-linenumber="126">
           <span class="hits">1</span>
           
           <code class="ruby">          loop do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="236">
+        <li class="covered" data-hits="1" data-linenumber="127">
           <span class="hits">1</span>
           
           <code class="ruby">            output(I18n.t(&#39;operations.amount.withdraw_money&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="237">
+        <li class="covered" data-hits="1" data-linenumber="128">
           <span class="hits">1</span>
           
           <code class="ruby">            a2 = input</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="238">
+        <li class="covered" data-hits="1" data-linenumber="129">
           <span class="hits">1</span>
           
           <code class="ruby">            if a2&amp;.to_i.to_i &gt; 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="239">
+        <li class="missed" data-hits="0" data-linenumber="130">
           
           
           <code class="ruby">              money_left = current_card[:balance] - a2&amp;.to_i.to_i - withdraw_tax(current_card[:type], current_card[:balance], current_card[:number], a2&amp;.to_i.to_i)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="240">
+        <li class="missed" data-hits="0" data-linenumber="131">
           
           
           <code class="ruby">              if money_left &gt; 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="241">
+        <li class="missed" data-hits="0" data-linenumber="132">
           
           
           <code class="ruby">                current_card[:balance] = money_left</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="242">
+        <li class="missed" data-hits="0" data-linenumber="133">
           
           
-          <code class="ruby">                @current_account.card[answer&amp;.to_i.to_i - 1] = current_card</code>
+          <code class="ruby">                @current_account.cards[answer&amp;.to_i.to_i - 1] = current_card</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="243">
+        <li class="missed" data-hits="0" data-linenumber="134">
           
           
           <code class="ruby">                new_accounts = []</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="244">
+        <li class="missed" data-hits="0" data-linenumber="135">
           
           
           <code class="ruby">                accounts.each do |ac|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="245">
+        <li class="missed" data-hits="0" data-linenumber="136">
           
           
           <code class="ruby">                  if ac.login == @current_account.login</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="246">
+        <li class="missed" data-hits="0" data-linenumber="137">
           
           
           <code class="ruby">                    new_accounts.push(@current_account)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="247">
+        <li class="never" data-hits="" data-linenumber="138">
           
           
           <code class="ruby">                  else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="248">
+        <li class="missed" data-hits="0" data-linenumber="139">
           
           
           <code class="ruby">                    new_accounts.push(ac)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="249">
+        <li class="never" data-hits="" data-linenumber="140">
           
           
           <code class="ruby">                  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="250">
+        <li class="never" data-hits="" data-linenumber="141">
           
           
           <code class="ruby">                end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="251">
+        <li class="missed" data-hits="0" data-linenumber="142">
           
           
           <code class="ruby">                File.open(@file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="252">
+        <li class="missed" data-hits="0" data-linenumber="143">
           
           
           <code class="ruby">                puts &quot;Money #{a2&amp;.to_i.to_i} withdrawed from #{current_card[:number]}$. Money left: #{current_card[:balance]}$. Tax: #{withdraw_tax(current_card[:type], current_card[:balance], current_card[:number], a2&amp;.to_i.to_i)}$&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="253">
+        <li class="missed" data-hits="0" data-linenumber="144">
           
           
           <code class="ruby">                return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="254">
+        <li class="never" data-hits="" data-linenumber="145">
           
           
           <code class="ruby">              else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="255">
+        <li class="missed" data-hits="0" data-linenumber="146">
           
           
           <code class="ruby">                output(I18n.t(&#39;error_phrases.no_money_left&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="256">
+        <li class="missed" data-hits="0" data-linenumber="147">
           
           
           <code class="ruby">                return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="257">
+        <li class="never" data-hits="" data-linenumber="148">
           
           
           <code class="ruby">              end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="258">
+        <li class="never" data-hits="" data-linenumber="149">
           
           
           <code class="ruby">            else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="259">
+        <li class="covered" data-hits="1" data-linenumber="150">
           <span class="hits">1</span>
           
           <code class="ruby">              output(I18n.t(&#39;error_phrases.correct_amount&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="260">
+        <li class="covered" data-hits="1" data-linenumber="151">
           <span class="hits">1</span>
           
           <code class="ruby">              return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="261">
+        <li class="never" data-hits="" data-linenumber="152">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="262">
+        <li class="never" data-hits="" data-linenumber="153">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="263">
+        <li class="never" data-hits="" data-linenumber="154">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="264">
+        <li class="covered" data-hits="2" data-linenumber="155">
           <span class="hits">2</span>
           
           <code class="ruby">          output(I18n.t(&#39;error_phrases.wrong_number&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="265">
+        <li class="covered" data-hits="2" data-linenumber="156">
           <span class="hits">2</span>
           
           <code class="ruby">          return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="266">
+        <li class="never" data-hits="" data-linenumber="157">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="267">
+        <li class="never" data-hits="" data-linenumber="158">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="268">
+        <li class="never" data-hits="" data-linenumber="159">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="269">
+        <li class="covered" data-hits="1" data-linenumber="160">
           <span class="hits">1</span>
           
           <code class="ruby">      output(I18n.t(&#39;error_phrases.zero_cards&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="270">
+        <li class="never" data-hits="" data-linenumber="161">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="271">
+        <li class="never" data-hits="" data-linenumber="162">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="272">
+        <li class="never" data-hits="" data-linenumber="163">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="273">
+        <li class="covered" data-hits="1" data-linenumber="164">
           <span class="hits">1</span>
           
           <code class="ruby">  def put_money</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="274">
+        <li class="covered" data-hits="14" data-linenumber="165">
           <span class="hits">14</span>
           
           <code class="ruby">    puts &#39;Choose the card for putting:&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="275">
+        <li class="never" data-hits="" data-linenumber="166">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="276">
+        <li class="covered" data-hits="14" data-linenumber="167">
           <span class="hits">14</span>
           
-          <code class="ruby">    if @current_account.card.any?</code>
+          <code class="ruby">    if @current_account.cards.any?</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="277">
+        <li class="covered" data-hits="13" data-linenumber="168">
           <span class="hits">13</span>
           
-          <code class="ruby">      @current_account.card.each_with_index do |c, i|</code>
+          <code class="ruby">      @current_account.cards.each_with_index do |c, i|</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="278">
+        <li class="covered" data-hits="29" data-linenumber="169">
           <span class="hits">29</span>
           
           <code class="ruby">        output(I18n.t(&#39;common_phrases.show_cards_for&#39;, number: &quot;#{c[:number]}&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="279">
+        <li class="never" data-hits="" data-linenumber="170">
           
           
           <code class="ruby">          type: &quot;#{c[:type]}&quot;, </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="280">
+        <li class="never" data-hits="" data-linenumber="171">
           
           
           <code class="ruby">          index: &quot;#{i + 1}&quot;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="281">
+        <li class="never" data-hits="" data-linenumber="172">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="282">
+        <li class="covered" data-hits="13" data-linenumber="173">
           <span class="hits">13</span>
           
           <code class="ruby">      output(I18n.t(&#39;common_phrases.press_exit&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="283">
+        <li class="covered" data-hits="13" data-linenumber="174">
           <span class="hits">13</span>
           
           <code class="ruby">      loop do</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="284">
+        <li class="covered" data-hits="13" data-linenumber="175">
           <span class="hits">13</span>
           
           <code class="ruby">        answer = input</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="285">
+        <li class="covered" data-hits="13" data-linenumber="176">
           <span class="hits">13</span>
           
           <code class="ruby">        break if answer == &#39;exit&#39;</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="286">
+        <li class="covered" data-hits="8" data-linenumber="177">
           <span class="hits">8</span>
           
-          <code class="ruby">        if answer&amp;.to_i.to_i &lt;= @current_account.card.length &amp;&amp; answer&amp;.to_i.to_i &gt; 0</code>
+          <code class="ruby">        if answer&amp;.to_i.to_i &lt;= @current_account.cards.length &amp;&amp; answer&amp;.to_i.to_i &gt; 0</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="287">
+        <li class="covered" data-hits="6" data-linenumber="178">
           <span class="hits">6</span>
           
-          <code class="ruby">          current_card = @current_account.card[answer&amp;.to_i.to_i - 1]</code>
+          <code class="ruby">          current_card = @current_account.cards[answer&amp;.to_i.to_i - 1]</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="288">
+        <li class="covered" data-hits="6" data-linenumber="179">
           <span class="hits">6</span>
           
           <code class="ruby">          loop do</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="289">
+        <li class="covered" data-hits="6" data-linenumber="180">
           <span class="hits">6</span>
           
           <code class="ruby">            output(I18n.t(&#39;operations.amount.put_money&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="290">
+        <li class="covered" data-hits="6" data-linenumber="181">
           <span class="hits">6</span>
           
           <code class="ruby">            a2 = input</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="291">
+        <li class="covered" data-hits="6" data-linenumber="182">
           <span class="hits">6</span>
           
           <code class="ruby">            if a2&amp;.to_i.to_i &gt; 0</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="292">
+        <li class="covered" data-hits="4" data-linenumber="183">
           <span class="hits">4</span>
           
           <code class="ruby">              if put_tax(current_card[:type], current_card[:balance], current_card[:number], a2&amp;.to_i.to_i) &gt;= a2&amp;.to_i.to_i</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="293">
+        <li class="covered" data-hits="1" data-linenumber="184">
           <span class="hits">1</span>
           
           <code class="ruby">                output(I18n.t(&#39;error_phrases.tax_higher&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="294">
+        <li class="covered" data-hits="1" data-linenumber="185">
           <span class="hits">1</span>
           
           <code class="ruby">                return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="295">
+        <li class="never" data-hits="" data-linenumber="186">
           
           
           <code class="ruby">              else</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="296">
+        <li class="covered" data-hits="3" data-linenumber="187">
           <span class="hits">3</span>
           
           <code class="ruby">                new_money_amount = current_card[:balance] + a2&amp;.to_i.to_i - put_tax(current_card[:type], current_card[:balance], current_card[:number], a2&amp;.to_i.to_i)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="297">
+        <li class="covered" data-hits="3" data-linenumber="188">
           <span class="hits">3</span>
           
           <code class="ruby">                current_card[:balance] = new_money_amount</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="298">
+        <li class="covered" data-hits="3" data-linenumber="189">
           <span class="hits">3</span>
           
-          <code class="ruby">                @current_account.card[answer&amp;.to_i.to_i - 1] = current_card</code>
+          <code class="ruby">                @current_account.cards[answer&amp;.to_i.to_i - 1] = current_card</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="299">
+        <li class="covered" data-hits="3" data-linenumber="190">
           <span class="hits">3</span>
           
           <code class="ruby">                new_accounts = []</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="300">
+        <li class="covered" data-hits="3" data-linenumber="191">
           <span class="hits">3</span>
           
           <code class="ruby">                accounts.each do |ac|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="301">
+        <li class="covered" data-hits="3" data-linenumber="192">
           <span class="hits">3</span>
           
           <code class="ruby">                  if ac.login == @current_account.login</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="302">
+        <li class="covered" data-hits="3" data-linenumber="193">
           <span class="hits">3</span>
           
           <code class="ruby">                    new_accounts.push(@current_account)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="303">
+        <li class="never" data-hits="" data-linenumber="194">
           
           
           <code class="ruby">                  else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="304">
+        <li class="missed" data-hits="0" data-linenumber="195">
           
           
           <code class="ruby">                    new_accounts.push(ac)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="305">
+        <li class="never" data-hits="" data-linenumber="196">
           
           
           <code class="ruby">                  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="306">
+        <li class="never" data-hits="" data-linenumber="197">
           
           
           <code class="ruby">                end</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="307">
+        <li class="covered" data-hits="6" data-linenumber="198">
           <span class="hits">6</span>
           
           <code class="ruby">                File.open(@file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="308">
+        <li class="covered" data-hits="3" data-linenumber="199">
           <span class="hits">3</span>
           
           <code class="ruby">                puts &quot;Money #{a2&amp;.to_i.to_i} was put on #{current_card[:number]}. Balance: #{current_card[:balance]}. Tax: #{put_tax(current_card[:type], current_card[:balance], current_card[:number], a2&amp;.to_i.to_i)}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="309">
+        <li class="covered" data-hits="3" data-linenumber="200">
           <span class="hits">3</span>
           
           <code class="ruby">                return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="310">
+        <li class="never" data-hits="" data-linenumber="201">
           
           
           <code class="ruby">              end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="311">
+        <li class="never" data-hits="" data-linenumber="202">
           
           
           <code class="ruby">            else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="312">
+        <li class="covered" data-hits="2" data-linenumber="203">
           <span class="hits">2</span>
           
           <code class="ruby">              output(I18n.t(&#39;error_phrases.correct_amount_mony&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="313">
+        <li class="covered" data-hits="2" data-linenumber="204">
           <span class="hits">2</span>
           
           <code class="ruby">              return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="314">
+        <li class="never" data-hits="" data-linenumber="205">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="315">
+        <li class="never" data-hits="" data-linenumber="206">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="316">
+        <li class="never" data-hits="" data-linenumber="207">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="317">
+        <li class="covered" data-hits="2" data-linenumber="208">
           <span class="hits">2</span>
           
           <code class="ruby">          output(I18n.t(&#39;error_phrases.wrong_number&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="318">
+        <li class="covered" data-hits="2" data-linenumber="209">
           <span class="hits">2</span>
           
           <code class="ruby">          return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="319">
+        <li class="never" data-hits="" data-linenumber="210">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="320">
+        <li class="never" data-hits="" data-linenumber="211">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="321">
+        <li class="never" data-hits="" data-linenumber="212">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="322">
+        <li class="covered" data-hits="1" data-linenumber="213">
           <span class="hits">1</span>
           
           <code class="ruby">      output(I18n.t(&#39;error_phrases.zero_cards&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="323">
+        <li class="never" data-hits="" data-linenumber="214">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="324">
+        <li class="never" data-hits="" data-linenumber="215">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="325">
+        <li class="never" data-hits="" data-linenumber="216">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="326">
+        <li class="covered" data-hits="1" data-linenumber="217">
           <span class="hits">1</span>
           
           <code class="ruby">  def send_money</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="327">
+        <li class="missed" data-hits="0" data-linenumber="218">
           
           
           <code class="ruby">    output(I18n.t(&#39;operations.send_money&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="328">
+        <li class="missed" data-hits="0" data-linenumber="219">
           
           
-          <code class="ruby">    if @current_account.card.any?</code>
+          <code class="ruby">    if @current_account.cards.any?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="329">
+        <li class="missed" data-hits="0" data-linenumber="220">
           
           
-          <code class="ruby">      @current_account.card.each_with_index do |c, i|</code>
+          <code class="ruby">      @current_account.cards.each_with_index do |c, i|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="330">
+        <li class="missed" data-hits="0" data-linenumber="221">
           
           
           <code class="ruby">        output(I18n.t(&#39;common_phrases.show_cards_for&#39;, number: &quot;#{c[:number]}&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="331">
+        <li class="never" data-hits="" data-linenumber="222">
           
           
           <code class="ruby">          type: &quot;#{c[:type]}&quot;, </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="332">
+        <li class="never" data-hits="" data-linenumber="223">
           
           
           <code class="ruby">          index: &quot;#{i + 1}&quot;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="333">
+        <li class="never" data-hits="" data-linenumber="224">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="334">
+        <li class="missed" data-hits="0" data-linenumber="225">
           
           
           <code class="ruby">      output(I18n.t(&#39;common_phrases.press_exit&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="335">
+        <li class="missed" data-hits="0" data-linenumber="226">
           
           
           <code class="ruby">      answer = input</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="336">
+        <li class="missed" data-hits="0" data-linenumber="227">
           
           
           <code class="ruby">      exit if answer == &#39;exit&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="337">
+        <li class="missed" data-hits="0" data-linenumber="228">
           
           
-          <code class="ruby">      if answer&amp;.to_i.to_i &lt;= @current_account.card.length &amp;&amp; answer&amp;.to_i.to_i &gt; 0</code>
+          <code class="ruby">      if answer&amp;.to_i.to_i &lt;= @current_account.cards.length &amp;&amp; answer&amp;.to_i.to_i &gt; 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="338">
+        <li class="missed" data-hits="0" data-linenumber="229">
           
           
-          <code class="ruby">        sender_card = @current_account.card[answer&amp;.to_i.to_i - 1]</code>
+          <code class="ruby">        sender_card = @current_account.cards[answer&amp;.to_i.to_i - 1]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="339">
+        <li class="never" data-hits="" data-linenumber="230">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="340">
+        <li class="missed" data-hits="0" data-linenumber="231">
           
           
           <code class="ruby">        output(I18n.t(&#39;error_phrases.hoose_correct_card&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="341">
+        <li class="missed" data-hits="0" data-linenumber="232">
           
           
           <code class="ruby">        return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="342">
+        <li class="never" data-hits="" data-linenumber="233">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="343">
+        <li class="never" data-hits="" data-linenumber="234">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="344">
+        <li class="missed" data-hits="0" data-linenumber="235">
           
           
           <code class="ruby">      output(I18n.t(&#39;error_phrases.zero_cards&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="345">
+        <li class="missed" data-hits="0" data-linenumber="236">
           
           
           <code class="ruby">      return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="346">
+        <li class="never" data-hits="" data-linenumber="237">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="347">
+        <li class="missed" data-hits="0" data-linenumber="238">
           
           
           <code class="ruby">    output(I18n.t(&#39;common_phrases.recipient_card&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="348">
+        <li class="missed" data-hits="0" data-linenumber="239">
           
           
           <code class="ruby">    a2 = input</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="349">
+        <li class="missed" data-hits="0" data-linenumber="240">
           
           
           <code class="ruby">    if a2.length &gt; 15 &amp;&amp; a2.length &lt; 17</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="350">
+        <li class="missed" data-hits="0" data-linenumber="241">
           
           
-          <code class="ruby">      all_cards = accounts.map(&amp;:card).flatten</code>
+          <code class="ruby">      all_cards = accounts.map(&amp;:cards).flatten</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="351">
+        <li class="missed" data-hits="0" data-linenumber="242">
           
           
           <code class="ruby">      if all_cards.select { |card| card[:number] == a2 }.any?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="352">
+        <li class="missed" data-hits="0" data-linenumber="243">
           
           
           <code class="ruby">        recipient_card = all_cards.select { |card| card[:number] == a2 }.first</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="353">
+        <li class="never" data-hits="" data-linenumber="244">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="354">
+        <li class="missed" data-hits="0" data-linenumber="245">
           
           
           <code class="ruby">        output(I18n.t(&#39;error_phrases.not_exist_card_number&#39;, number: &quot;#{a2}&quot;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="355">
+        <li class="missed" data-hits="0" data-linenumber="246">
           
           
           <code class="ruby">        return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="356">
+        <li class="never" data-hits="" data-linenumber="247">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="357">
+        <li class="never" data-hits="" data-linenumber="248">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="358">
+        <li class="missed" data-hits="0" data-linenumber="249">
           
           
           <code class="ruby">      output(I18n.t(&#39;error_phrases.invalid_number&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="359">
+        <li class="missed" data-hits="0" data-linenumber="250">
           
           
           <code class="ruby">      return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="360">
+        <li class="never" data-hits="" data-linenumber="251">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="361">
+        <li class="never" data-hits="" data-linenumber="252">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="362">
+        <li class="missed" data-hits="0" data-linenumber="253">
           
           
           <code class="ruby">    loop do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="363">
+        <li class="missed" data-hits="0" data-linenumber="254">
           
           
           <code class="ruby">      output(I18n.t(&#39;operations.amount.withdraw_money&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="364">
+        <li class="missed" data-hits="0" data-linenumber="255">
           
           
           <code class="ruby">      a3 = input</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="365">
+        <li class="missed" data-hits="0" data-linenumber="256">
           
           
           <code class="ruby">      if a3&amp;.to_i.to_i &gt; 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="366">
+        <li class="missed" data-hits="0" data-linenumber="257">
           
           
           <code class="ruby">        sender_balance = sender_card[:balance] - a3&amp;.to_i.to_i - sender_tax(sender_card[:type], sender_card[:balance], sender_card[:number], a3&amp;.to_i.to_i)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="367">
+        <li class="missed" data-hits="0" data-linenumber="258">
           
           
           <code class="ruby">        recipient_balance = recipient_card[:balance] + a3&amp;.to_i.to_i - put_tax(recipient_card[:type], recipient_card[:balance], recipient_card[:number], a3&amp;.to_i.to_i)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="368">
+        <li class="never" data-hits="" data-linenumber="259">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="369">
+        <li class="missed" data-hits="0" data-linenumber="260">
           
           
           <code class="ruby">        if sender_balance &lt; 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="370">
+        <li class="missed" data-hits="0" data-linenumber="261">
           
           
           <code class="ruby">          output(I18n.t(&#39;error_phrases.no_money_left&#39;))</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="371">
+        <li class="missed" data-hits="0" data-linenumber="262">
           
           
           <code class="ruby">        elsif put_tax(recipient_card[:type], recipient_card[:balance], recipient_card[:number], a3&amp;.to_i.to_i) &gt;= a3&amp;.to_i.to_i</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="372">
+        <li class="missed" data-hits="0" data-linenumber="263">
           
           
           <code class="ruby">          output(I18n.t(&#39;error_phrases.no_money_send&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="373">
+        <li class="never" data-hits="" data-linenumber="264">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="374">
+        <li class="missed" data-hits="0" data-linenumber="265">
           
           
           <code class="ruby">          sender_card[:balance] = sender_balance</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="375">
+        <li class="missed" data-hits="0" data-linenumber="266">
           
           
-          <code class="ruby">          @current_account.card[answer&amp;.to_i.to_i - 1] = sender_card</code>
+          <code class="ruby">          @current_account.cards[answer&amp;.to_i.to_i - 1] = sender_card</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="376">
+        <li class="missed" data-hits="0" data-linenumber="267">
           
           
           <code class="ruby">          new_accounts = []</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="377">
+        <li class="missed" data-hits="0" data-linenumber="268">
           
           
           <code class="ruby">          accounts.each do |ac|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="378">
+        <li class="missed" data-hits="0" data-linenumber="269">
           
           
           <code class="ruby">            if ac.login == @current_account.login</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="379">
+        <li class="missed" data-hits="0" data-linenumber="270">
           
           
           <code class="ruby">              new_accounts.push(@current_account)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="380">
+        <li class="missed" data-hits="0" data-linenumber="271">
           
           
-          <code class="ruby">            elsif ac.card.map { |card| card[:number] }.include? a2</code>
+          <code class="ruby">            elsif ac.cards.map { |card| card[:number] }.include? a2</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="381">
+        <li class="missed" data-hits="0" data-linenumber="272">
           
           
           <code class="ruby">              recipient = ac</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="382">
+        <li class="missed" data-hits="0" data-linenumber="273">
           
           
           <code class="ruby">              new_recipient_cards = []</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="383">
+        <li class="missed" data-hits="0" data-linenumber="274">
           
           
-          <code class="ruby">              recipient.card.each do |card|</code>
+          <code class="ruby">              recipient.cards.each do |card|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="384">
+        <li class="missed" data-hits="0" data-linenumber="275">
           
           
           <code class="ruby">                if card[:number] == a2</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="385">
+        <li class="missed" data-hits="0" data-linenumber="276">
           
           
           <code class="ruby">                  card[:balance] = recipient_balance</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="386">
+        <li class="never" data-hits="" data-linenumber="277">
           
           
           <code class="ruby">                end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="387">
+        <li class="missed" data-hits="0" data-linenumber="278">
           
           
           <code class="ruby">                new_recipient_cards.push(card)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="388">
+        <li class="never" data-hits="" data-linenumber="279">
           
           
           <code class="ruby">              end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="389">
+        <li class="missed" data-hits="0" data-linenumber="280">
           
           
-          <code class="ruby">              recipient.card = new_recipient_cards</code>
+          <code class="ruby">              recipient.cards = new_recipient_cards</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="390">
+        <li class="missed" data-hits="0" data-linenumber="281">
           
           
           <code class="ruby">              new_accounts.push(recipient)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="391">
+        <li class="never" data-hits="" data-linenumber="282">
           
           
           <code class="ruby">            end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="392">
+        <li class="never" data-hits="" data-linenumber="283">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="393">
+        <li class="missed" data-hits="0" data-linenumber="284">
           
           
           <code class="ruby">          File.open(&#39;accounts.yml&#39;, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="394">
+        <li class="missed" data-hits="0" data-linenumber="285">
           
           
           <code class="ruby">          puts &quot;Money #{a3&amp;.to_i.to_i}$ was put on #{sender_card[:number]}. Balance: #{recipient_balance}. Tax: #{put_tax(sender_card[:type], sender_card[:balance], sender_card[:number], a3&amp;.to_i.to_i)}$\n&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="395">
+        <li class="missed" data-hits="0" data-linenumber="286">
           
           
           <code class="ruby">          puts &quot;Money #{a3&amp;.to_i.to_i}$ was put on #{a2}. Balance: #{sender_balance}. Tax: #{sender_tax(sender_card[:type], sender_card[:balance], sender_card[:number], a3&amp;.to_i.to_i)}$\n&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="396">
+        <li class="missed" data-hits="0" data-linenumber="287">
           
           
           <code class="ruby">          break</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="397">
+        <li class="never" data-hits="" data-linenumber="288">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="398">
+        <li class="never" data-hits="" data-linenumber="289">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="399">
+        <li class="missed" data-hits="0" data-linenumber="290">
           
           
           <code class="ruby">      output(I18n.t(&#39;error_phrases.wrong_number&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="400">
+        <li class="never" data-hits="" data-linenumber="291">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="401">
+        <li class="never" data-hits="" data-linenumber="292">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="402">
+        <li class="never" data-hits="" data-linenumber="293">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="403">
+        <li class="never" data-hits="" data-linenumber="294">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="404">
-          
-          
-          <code class="ruby">  # def destroy_account</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="405">
-          
-          
-          <code class="ruby">  #   output(I18n.t(&#39;common_phrases.destroy_account&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="406">
-          
-          
-          <code class="ruby">  #   a = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="407">
-          
-          
-          <code class="ruby">  #   if a == &#39;y&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="408">
-          
-          
-          <code class="ruby">  #     new_accounts = []</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="409">
-          
-          
-          <code class="ruby">  #     accounts.each do |ac|</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="410">
-          
-          
-          <code class="ruby">  #       if ac.login == @current_account.login</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="411">
-          
-          
-          <code class="ruby">  #       else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="412">
-          
-          
-          <code class="ruby">  #         new_accounts.push(ac)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="413">
-          
-          
-          <code class="ruby">  #       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="414">
-          
-          
-          <code class="ruby">  #     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="415">
-          
-          
-          <code class="ruby">  #     File.open(@file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="416">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="417">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="418">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="419">
+        <li class="covered" data-hits="1" data-linenumber="295">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="420">
-          
-          
-          <code class="ruby">  # output(I18n.t(&#39;ask_phrases.login&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="421">
-          
-          
-          <code class="ruby">  # login = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="422">
-          
-          
-          <code class="ruby">  # output(I18n.t(&#39;ask_phrases.password&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="423">
-          
-          
-          <code class="ruby">  # password = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="424">
+        <li class="never" data-hits="" data-linenumber="296">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="425">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="426">
-          
-          
-          <code class="ruby">  # def name_input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="427">
-          
-          
-          <code class="ruby">  #   output(I18n.t(&#39;ask_phrases.name&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="428">
-          
-          
-          <code class="ruby">  #   # puts &#39;Enter your name&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="429">
-          
-          
-          <code class="ruby">  #   @name = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="430">
-          
-          
-          <code class="ruby">  #   unless @name != &#39;&#39; &amp;&amp; @name[0].upcase == @name[0]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="431">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.name.first_letter&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="432">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="433">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="434">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="435">
-          
-          
-          <code class="ruby">  # def login_input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="436">
-          
-          
-          <code class="ruby">  #   output(I18n.t(&#39;ask_phrases.login&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="437">
-          
-          
-          <code class="ruby">  #   @login = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="438">
-          
-          
-          <code class="ruby">  #   if @login == &#39;&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="439">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.login.present&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="440">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="441">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="442">
-          
-          
-          <code class="ruby">  #   if @login.length &lt; 4</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="443">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.login.longer&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="444">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="445">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="446">
-          
-          
-          <code class="ruby">  #   if @login.length &gt; 20</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="447">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.login.shorter&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="448">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="449">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="450">
-          
-          
-          <code class="ruby">  #   if accounts.map { |a| a.login }.include? @login</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="451">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.login.exists&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="452">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="453">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="454">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="455">
-          
-          
-          <code class="ruby">  # def password_input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="456">
-          
-          
-          <code class="ruby">  #   output(I18n.t(&#39;ask_phrases.password&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="457">
-          
-          
-          <code class="ruby">  #   @password = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="458">
-          
-          
-          <code class="ruby">  #   if @password == &#39;&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="459">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.password.present&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="460">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="461">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="462">
-          
-          
-          <code class="ruby">  #   if @password.length &lt; 6</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="463">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.password.longer&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="464">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="465">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="466">
-          
-          
-          <code class="ruby">  #   if @password.length &gt; 30</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="467">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.password.shorter&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="468">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="469">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="470">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="471">
-          
-          
-          <code class="ruby">  # def age_input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="472">
-          
-          
-          <code class="ruby">  #   output(I18n.t(&#39;ask_phrases.age&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="473">
-          
-          
-          <code class="ruby">  #   @age = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="474">
-          
-          
-          <code class="ruby">  #   if @age.to_i.is_a?(Integer) &amp;&amp; @age.to_i &gt;= 23 &amp;&amp; @age.to_i &lt;= 90</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="475">
-          
-          
-          <code class="ruby">  #     @age = @age.to_i</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="476">
-          
-          
-          <code class="ruby">  #   else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="477">
-          
-          
-          <code class="ruby">  #     @errors.push(I18n.t(&#39;account_validation_phrases.age.length&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="478">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="479">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="480">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="481">
-          
-          
-          <code class="ruby">  # def accounts</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="482">
-          
-          
-          <code class="ruby">  #   if File.exists?(&#39;database/accounts.yml&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="483">
-          
-          
-          <code class="ruby">  #     YAML.load_file(&#39;database/accounts.yml&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="484">
-          
-          
-          <code class="ruby">  #   else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="485">
-          
-          
-          <code class="ruby">  #     []</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="486">
-          
-          
-          <code class="ruby">  #   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="487">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="488">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="489">
+        <li class="covered" data-hits="1" data-linenumber="297">
           <span class="hits">1</span>
           
           <code class="ruby">  def withdraw_tax(type, balance, number, amount)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="490">
+        <li class="missed" data-hits="0" data-linenumber="298">
           
           
           <code class="ruby">    if type == &#39;usual&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="491">
+        <li class="missed" data-hits="0" data-linenumber="299">
           
           
           <code class="ruby">      return amount * 0.05</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="492">
+        <li class="missed" data-hits="0" data-linenumber="300">
           
           
           <code class="ruby">    elsif type == &#39;capitalist&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="493">
+        <li class="missed" data-hits="0" data-linenumber="301">
           
           
           <code class="ruby">      return amount * 0.04</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="494">
+        <li class="missed" data-hits="0" data-linenumber="302">
           
           
           <code class="ruby">    elsif type == &#39;virtual&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="495">
+        <li class="missed" data-hits="0" data-linenumber="303">
           
           
           <code class="ruby">      return amount * 0.88</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="496">
+        <li class="never" data-hits="" data-linenumber="304">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="497">
+        <li class="missed" data-hits="0" data-linenumber="305">
           
           
           <code class="ruby">    0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="498">
+        <li class="never" data-hits="" data-linenumber="306">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="499">
+        <li class="never" data-hits="" data-linenumber="307">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="500">
+        <li class="covered" data-hits="1" data-linenumber="308">
           <span class="hits">1</span>
           
           <code class="ruby">  def put_tax(type, balance, number, amount)</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="501">
+        <li class="covered" data-hits="10" data-linenumber="309">
           <span class="hits">10</span>
           
           <code class="ruby">    if type == &#39;usual&#39;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="502">
+        <li class="covered" data-hits="3" data-linenumber="310">
           <span class="hits">3</span>
           
           <code class="ruby">      return amount * 0.02</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="503">
+        <li class="covered" data-hits="7" data-linenumber="311">
           <span class="hits">7</span>
           
           <code class="ruby">    elsif type == &#39;capitalist&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="504">
+        <li class="covered" data-hits="4" data-linenumber="312">
           <span class="hits">4</span>
           
           <code class="ruby">      return 10</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="505">
+        <li class="covered" data-hits="3" data-linenumber="313">
           <span class="hits">3</span>
           
           <code class="ruby">    elsif type == &#39;virtual&#39;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="506">
+        <li class="covered" data-hits="3" data-linenumber="314">
           <span class="hits">3</span>
           
           <code class="ruby">      return 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="507">
+        <li class="never" data-hits="" data-linenumber="315">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="508">
+        <li class="missed" data-hits="0" data-linenumber="316">
           
           
           <code class="ruby">    0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="509">
+        <li class="never" data-hits="" data-linenumber="317">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="510">
+        <li class="never" data-hits="" data-linenumber="318">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="511">
+        <li class="covered" data-hits="1" data-linenumber="319">
           <span class="hits">1</span>
           
           <code class="ruby">  def sender_tax(type, balance, number, amount)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="512">
+        <li class="missed" data-hits="0" data-linenumber="320">
           
           
           <code class="ruby">    if type == &#39;usual&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="513">
+        <li class="missed" data-hits="0" data-linenumber="321">
           
           
           <code class="ruby">      return 20</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="514">
+        <li class="missed" data-hits="0" data-linenumber="322">
           
           
           <code class="ruby">    elsif type == &#39;capitalist&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="515">
+        <li class="missed" data-hits="0" data-linenumber="323">
           
           
           <code class="ruby">      return amount * 0.1</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="516">
+        <li class="missed" data-hits="0" data-linenumber="324">
           
           
           <code class="ruby">    elsif type == &#39;virtual&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="517">
+        <li class="missed" data-hits="0" data-linenumber="325">
           
           
           <code class="ruby">      return 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="518">
+        <li class="never" data-hits="" data-linenumber="326">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="519">
+        <li class="missed" data-hits="0" data-linenumber="327">
           
           
           <code class="ruby">    0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="520">
+        <li class="never" data-hits="" data-linenumber="328">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="521">
+        <li class="never" data-hits="" data-linenumber="329">
           
           
           <code class="ruby">end</code>
@@ -3388,157 +2236,49 @@
           <code class="ruby">module Uploader</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby">  # ACCOUNTS_PATH_ROUTE = &#39;database/&#39;.freeze</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby">  # ACCOUNTS_PATH_NAME = &#39;accounts&#39;.freeze</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">  # ACCOUNTS_PATH_FORMAT = &#39;.yml&#39;.freeze</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">  # ACCOUNTS_PATH = ACCOUNTS_PATH_ROUTE + ACCOUNTS_PATH_NAME + ACCOUNTS_PATH_FORMAT</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">  # def save_to_db(new_accounts)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">  #   File.open(ACCOUNTS_PATH, &#39;w&#39;) { |f| f.write new_accounts.to_yaml }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">  # def load_db</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">  #   File.exist?(ACCOUNTS_PATH) ? YAML.load_file(ACCOUNTS_PATH) : []</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">  # def update_db(account)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">  #   loaded_db = load_db</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">  #   loaded_db &lt;&lt; account</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">  #   save_to_db(loaded_db.reverse.uniq(&amp;:login))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
           <code class="ruby">  def accounts</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="missed" data-hits="0" data-linenumber="3">
           
           
           <code class="ruby">    if File.exists?(&#39;database/accounts.yml&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
+        <li class="missed" data-hits="0" data-linenumber="4">
           
           
           <code class="ruby">      YAML.load_file(&#39;database/accounts.yml&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="missed" data-hits="0" data-linenumber="6">
           
           
           <code class="ruby">      []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
@@ -3862,7 +2602,7 @@
         <li class="covered" data-hits="12" data-linenumber="34">
           <span class="hits">12</span>
           
-          <code class="ruby">    @account.card = []</code>
+          <code class="ruby">    @account.cards = []</code>
         </li>
       
         <li class="covered" data-hits="12" data-linenumber="35">
