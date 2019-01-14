@@ -7,7 +7,6 @@ It's a bank application that allows to work with
 * Cards
 * Money transfers
 
-
 All the code is in the `account.rb`
 
 ## Task
