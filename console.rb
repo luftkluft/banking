@@ -1,4 +1,7 @@
 class Console
+  COMMANDS = { create: 'create', load: 'load', accept: 'y', exit: 'exit', show_cards: 'SC',
+    delete_account: 'DA', card_create: 'CC', card_destroy: 'DC', put_money: 'PM',
+    withdraw_money: 'WM', send_money: 'SM' }.freeze
   include InOut
   include Uploader
   attr_accessor :current_account, :account
@@ -8,16 +11,12 @@ class Console
 
   def console
     output(I18n.t('hello_message'))
-    a = gets.chomp
-    if a == 'create'
-      create
-    elsif a == 'load'
-      load
-    else
-      exit
+    case input
+    when COMMANDS[:create] then create
+    when COMMANDS[:load] then load
+    else exit
     end
   end
-
 
   def create
     loop do
@@ -26,14 +25,18 @@ class Console
       login_input
       password_input
       break unless @account.errors.length != 0
-      @account.errors.each do |e|
-        puts e
+      @account.errors.each do |error|
+        puts error
       end
       @account.errors = []
     end
+    save_account_to_base
+  end
+
+  def save_account_to_base
     @account.cards = []
     new_accounts = accounts << @account
-#    @current_account = @account
+    @current_account = @account
     File.open(@account.file_path, 'w') { |f| f.write new_accounts.to_yaml } #Storing
   end
 
@@ -51,117 +54,41 @@ class Console
       puts '- destroy account - press `DA`'
       puts '- exit from account - press `exit`'
 
-      command = input
-
-      if command == 'SC' || command == 'CC' || command == 'DC' || command == 'PM' || command == 'WM' || command == 'SM' || command == 'DA' || command == 'exit'
-        if command == 'SC'
-          show_cards
-        elsif command == 'CC'
-          create_card
-        elsif command == 'DC'
-          destroy_card
-        elsif command == 'PM'
-          put_money
-        elsif command == 'WM'
-          withdraw_money
-        elsif command == 'SM'
-          send_money
-        elsif command == 'DA'
-          destroy_account
-          exit
-        elsif command == 'exit'
-          exit
-          break
-        end
-      else
-        output(I18n.t('error_phrases.wrong_command'))
+      case input
+      when COMMANDS[:show_cards] then show_cards
+      when COMMANDS[:card_create] then create_card
+      when COMMANDS[:card_destroy] then destroy_card
+      when COMMANDS[:put_money] then put_money
+      when COMMANDS[:withdraw_money] then withdraw_money
+      when COMMANDS[:send_money] then send_money
+      when COMMANDS[:delete_account] then destroy_account
+      when COMMANDS[:exit]
+        exit
+        break
+      else output(I18n.t('error_phrases.wrong_command'))
       end
     end
-  end
-
-  def name_input
-    output(I18n.t('ask_phrases.name'))
-    @name = input
-    unless @name != '' && @name[0].upcase == @name[0]
-      @account.errors.push(I18n.t('account_validation_phrases.name.first_letter'))
-    end
-    @account.name = @name
-  end
-
-  def login_input
-    output(I18n.t('ask_phrases.login'))
-    login = input
-    if login == ''
-      @account.errors.push(I18n.t('account_validation_phrases.login.present'))
-    end
-
-    if login.length < 4
-      @account.errors.push(I18n.t('account_validation_phrases.login.longer'))
-    end
-
-    if login.length > 20
-      @account.errors.push(I18n.t('account_validation_phrases.login.shorter'))
-    end
-
-    if accounts.map { |a| a.login }.include? login
-      @account.errors.push(I18n.t('account_validation_phrases.login.exists'))
-    end
-
-    @account.login = login
-  end
-
-  def password_input
-    output(I18n.t('ask_phrases.password'))
-    password = input
-    if password == ''
-      @account.errors.push(I18n.t('account_validation_phrases.password.present'))
-    end
-
-    if password.length < 6
-      @account.errors.push(I18n.t('account_validation_phrases.password.longer'))
-    end
-
-    if password.length > 30
-      @account.errors.push(I18n.t('account_validation_phrases.password.shorter'))
-    end
-
-    @account.password = password
-  end
-
-  def age_input
-    output(I18n.t('ask_phrases.age'))
-    age = input
-    if age.to_i.is_a?(Integer) && age.to_i >= 23 && age.to_i <= 90
-      age = age.to_i
-    else
-      @account.errors.push(I18n.t('account_validation_phrases.age.length'))
-    end
-    @account.age = age
   end
 
   def create_the_first_account
     output(I18n.t('common_phrases.create_first_account'))
-    if input == 'y'
-      return create
-    else
-      return console
-    end
+    return create if input == COMMANDS[:accept]
+
+    console
   end
 
   def load
     loop do
-      if !accounts.any?
-        return create_the_first_account
-      end
+      return create_the_first_account if !accounts.any?
 
       output(I18n.t('ask_phrases.login'))
       login = input
       output(I18n.t('ask_phrases.password'))
       password = input
-
-      if accounts.map { |a| { login: a.login, password: a.password } }.include?({ login: login, password: password })
-        a = accounts.select { |a| login == a.login }.first
-        @current_account = a
+      if accounts.map { |account| { login: account.login, password: account.password } }
+        .include?({ login: login, password: password })
+        account = accounts.select { |account| login == account.login }.first
+        @current_account = account
         @account.current_account = @current_account
         break
       else
@@ -198,16 +125,58 @@ class Console
 
   def destroy_account
     output(I18n.t('common_phrases.destroy_account'))
-    a = input
-    if a == 'y'
-      new_accounts = []
-      accounts.each do |ac|
-        if ac.login == @current_account.login
-        else
-          new_accounts.push(ac)
-        end
-      end
-      File.open(@account.file_path, 'w') { |f| f.write new_accounts.to_yaml } #Storing
+    remove_account_from_base if input == COMMANDS[:accept]
+  end
+
+  private
+
+  def login_input
+    output(I18n.t('ask_phrases.login'))
+    login = input
+    @account.errors.push(I18n.t('account_validation_phrases.login.present')) if login == ''
+    @account.errors.push(I18n.t('account_validation_phrases.login.longer')) if login.length < 4
+    @account.errors.push(I18n.t('account_validation_phrases.login.shorter')) if login.length > 20
+    @account.errors.push(I18n.t('account_validation_phrases.login.exists')) if accounts.map { |a| a.login }.include? login
+    @account.login = login
+  end
+
+  def password_input
+    output(I18n.t('ask_phrases.password'))
+    password = input
+    @account.errors.push(I18n.t('account_validation_phrases.password.present')) if password == ''
+    @account.errors.push(I18n.t('account_validation_phrases.password.longer')) if password.length < 6
+    @account.errors.push(I18n.t('account_validation_phrases.password.shorter')) if password.length > 30
+    @account.password = password
+  end
+
+  def age_input
+    output(I18n.t('ask_phrases.age'))
+    age = input
+    if age.to_i.is_a?(Integer) && age.to_i >= 23 && age.to_i <= 90
+      age = age.to_i
+    else
+      @account.errors.push(I18n.t('account_validation_phrases.age.length'))
     end
+    @account.age = age
+  end
+
+  def name_input
+    output(I18n.t('ask_phrases.name'))
+    @name = input
+    if @name == '' || @name[0].upcase != @name[0]
+      @account.errors.push(I18n.t('account_validation_phrases.name.first_letter'))
+    end
+    @account.name = @name
+  end
+
+  def remove_account_from_base
+    new_accounts = []
+    accounts.each do |account|
+      if account.login == @current_account.login
+      else
+        new_accounts.push(account)
+      end
+    end
+    File.open(@account.file_path, 'w') { |f| f.write new_accounts.to_yaml }
   end
 end

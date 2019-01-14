@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-13T21:24:32+03:00">2019-01-13T21:24:32+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-13T23:55:43+03:00">2019-01-13T23:55:43+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">76.01%</span></span>
+    (<span class="covered_percent"><span class="red">75.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         8.01
+         7.73
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>6</b> files in total.
-    <b>371</b> relevant lines. 
-    <span class="green"><b>282</b> lines covered</span> and
+    <b>356</b> relevant lines. 
+    <span class="green"><b>267</b> lines covered</span> and
     <span class="red"><b>89</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,7 +67,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>73.4</td>
+        <td>74.0</td>
       </tr>
       
       <tr>
@@ -102,12 +102,12 @@
       
       <tr>
         <td class="strong"><a href="#abb282cf51e52c0b25a5738d4ca292ec3d15ae7b" class="src_link" title="console.rb">console.rb</a></td>
-        <td class="green strong">99.27 %</td>
-        <td>213</td>
-        <td>137</td>
-        <td>136</td>
+        <td class="green strong">99.18 %</td>
+        <td>182</td>
+        <td>122</td>
+        <td>121</td>
         <td>1</td>
-        <td>11.8</td>
+        <td>11.4</td>
       </tr>
       
     </tbody>
@@ -2145,8 +2145,8 @@
           <code class="ruby">  def input</code>
         </li>
       
-        <li class="covered" data-hits="183" data-linenumber="3">
-          <span class="hits">183</span>
+        <li class="covered" data-hits="187" data-linenumber="3">
+          <span class="hits">187</span>
           
           <code class="ruby">    gets.chomp</code>
         </li>
@@ -2390,10 +2390,10 @@
         <div class="source_table" id="abb282cf51e52c0b25a5738d4ca292ec3d15ae7b">
   <div class="header">
     <h3>console.rb</h3>
-    <h4><span class="green">99.27 %</span> covered</h4>
+    <h4><span class="green">99.18 %</span> covered</h4>
     <div>
-      <b>137</b> relevant lines. 
-      <span class="green"><b>136</b> lines covered</span> and
+      <b>122</b> relevant lines. 
+      <span class="green"><b>121</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -2410,97 +2410,97 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  include InOut</code>
+          <code class="ruby">  COMMANDS = { create: &#39;create&#39;, load: &#39;load&#39;, accept: &#39;y&#39;, exit: &#39;exit&#39;, show_cards: &#39;SC&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="3">
           
-          <code class="ruby">  include Uploader</code>
+          
+          <code class="ruby">    delete_account: &#39;DA&#39;, card_create: &#39;CC&#39;, card_destroy: &#39;DC&#39;, put_money: &#39;PM&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">  attr_accessor :current_account, :account</code>
+          
+          <code class="ruby">    withdraw_money: &#39;WM&#39;, send_money: &#39;SM&#39; }.freeze</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
+          <code class="ruby">  include InOut</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  include Uploader</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_accessor :current_account, :account</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
           <code class="ruby">  def initialize(account)</code>
         </li>
       
-        <li class="covered" data-hits="58" data-linenumber="6">
+        <li class="covered" data-hits="58" data-linenumber="9">
           <span class="hits">58</span>
           
           <code class="ruby">    @account = account</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  def console</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="10">
+        <li class="covered" data-hits="4" data-linenumber="13">
           <span class="hits">4</span>
           
           <code class="ruby">    output(I18n.t(&#39;hello_message&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="11">
+        <li class="covered" data-hits="4" data-linenumber="14">
           <span class="hits">4</span>
           
-          <code class="ruby">    a = gets.chomp</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="12">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    if a == &#39;create&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      create</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="14">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    elsif a == &#39;load&#39;</code>
+          <code class="ruby">    case input</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">      load</code>
+          <code class="ruby">    when COMMANDS[:create] then create</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    else</code>
+          <code class="ruby">    when COMMANDS[:load] then load</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="17">
           <span class="hits">2</span>
           
-          <code class="ruby">      exit</code>
+          <code class="ruby">    else exit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
@@ -2521,484 +2521,484 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="23">
+        <li class="covered" data-hits="12" data-linenumber="22">
           <span class="hits">12</span>
           
           <code class="ruby">    loop do</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="24">
+        <li class="covered" data-hits="22" data-linenumber="23">
           <span class="hits">22</span>
           
           <code class="ruby">      name_input</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="25">
+        <li class="covered" data-hits="22" data-linenumber="24">
           <span class="hits">22</span>
           
           <code class="ruby">      age_input</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="26">
+        <li class="covered" data-hits="22" data-linenumber="25">
           <span class="hits">22</span>
           
           <code class="ruby">      login_input</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="27">
+        <li class="covered" data-hits="22" data-linenumber="26">
           <span class="hits">22</span>
           
           <code class="ruby">      password_input</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="28">
+        <li class="covered" data-hits="22" data-linenumber="27">
           <span class="hits">22</span>
           
           <code class="ruby">      break unless @account.errors.length != 0</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="29">
+        <li class="covered" data-hits="10" data-linenumber="28">
           <span class="hits">10</span>
           
-          <code class="ruby">      @account.errors.each do |e|</code>
+          <code class="ruby">      @account.errors.each do |error|</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="30">
+        <li class="covered" data-hits="12" data-linenumber="29">
           <span class="hits">12</span>
           
-          <code class="ruby">        puts e</code>
+          <code class="ruby">        puts error</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="32">
+        <li class="covered" data-hits="10" data-linenumber="31">
           <span class="hits">10</span>
           
           <code class="ruby">      @account.errors = []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="34">
+        <li class="covered" data-hits="12" data-linenumber="33">
+          <span class="hits">12</span>
+          
+          <code class="ruby">    save_account_to_base</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def save_account_to_base</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="37">
           <span class="hits">12</span>
           
           <code class="ruby">    @account.cards = []</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="35">
+        <li class="covered" data-hits="12" data-linenumber="38">
           <span class="hits">12</span>
           
           <code class="ruby">    new_accounts = accounts &lt;&lt; @account</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="12" data-linenumber="39">
+          <span class="hits">12</span>
           
-          
-          <code class="ruby">#    @current_account = @account</code>
+          <code class="ruby">    @current_account = @account</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="37">
+        <li class="covered" data-hits="13" data-linenumber="40">
           <span class="hits">13</span>
           
           <code class="ruby">    File.open(@account.file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
           <code class="ruby">  def main_menu</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="41">
+        <li class="covered" data-hits="19" data-linenumber="44">
           <span class="hits">19</span>
           
           <code class="ruby">    loop do</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="42">
+        <li class="covered" data-hits="37" data-linenumber="45">
           <span class="hits">37</span>
           
           <code class="ruby">      output(I18n.t(&#39;main_menu_message_welcome&#39;, name: &quot;#{@current_account.name}&quot;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">      # output(I18n.t(&#39;common_phrases.create_first_account&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="44">
+        <li class="covered" data-hits="37" data-linenumber="47">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;If you want to:&#39;</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="45">
+        <li class="covered" data-hits="37" data-linenumber="48">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;- show all cards - press SC&#39;</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="46">
+        <li class="covered" data-hits="37" data-linenumber="49">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;- create card - press CC&#39;</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="47">
+        <li class="covered" data-hits="37" data-linenumber="50">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;- destroy card - press DC&#39;</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="48">
+        <li class="covered" data-hits="37" data-linenumber="51">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;- put money on card - press PM&#39;</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="49">
+        <li class="covered" data-hits="37" data-linenumber="52">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;- withdraw money on card - press WM&#39;</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="50">
+        <li class="covered" data-hits="37" data-linenumber="53">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;- send money to another card  - press SM&#39;</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="51">
+        <li class="covered" data-hits="37" data-linenumber="54">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;- destroy account - press `DA`&#39;</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="52">
+        <li class="covered" data-hits="37" data-linenumber="55">
           <span class="hits">37</span>
           
           <code class="ruby">      puts &#39;- exit from account - press `exit`&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="54">
+        <li class="covered" data-hits="37" data-linenumber="57">
           <span class="hits">37</span>
           
-          <code class="ruby">      command = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="37" data-linenumber="56">
-          <span class="hits">37</span>
-          
-          <code class="ruby">      if command == &#39;SC&#39; || command == &#39;CC&#39; || command == &#39;DC&#39; || command == &#39;PM&#39; || command == &#39;WM&#39; || command == &#39;SM&#39; || command == &#39;DA&#39; || command == &#39;exit&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="36" data-linenumber="57">
-          <span class="hits">36</span>
-          
-          <code class="ruby">        if command == &#39;SC&#39;</code>
+          <code class="ruby">      case input</code>
         </li>
       
         <li class="covered" data-hits="11" data-linenumber="58">
           <span class="hits">11</span>
           
-          <code class="ruby">          show_cards</code>
+          <code class="ruby">      when COMMANDS[:show_cards] then show_cards</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="59">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
           
-          <code class="ruby">        elsif command == &#39;CC&#39;</code>
+          <code class="ruby">      when COMMANDS[:card_create] then create_card</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
-          <code class="ruby">          create_card</code>
+          <code class="ruby">      when COMMANDS[:card_destroy] then destroy_card</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="61">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
           
-          <code class="ruby">        elsif command == &#39;DC&#39;</code>
+          <code class="ruby">      when COMMANDS[:put_money] then put_money</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
-          <code class="ruby">          destroy_card</code>
+          <code class="ruby">      when COMMANDS[:withdraw_money] then withdraw_money</code>
         </li>
       
-        <li class="covered" data-hits="23" data-linenumber="63">
-          <span class="hits">23</span>
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
           
-          <code class="ruby">        elsif command == &#39;PM&#39;</code>
+          <code class="ruby">      when COMMANDS[:send_money] then send_money</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
-          <code class="ruby">          put_money</code>
+          <code class="ruby">      when COMMANDS[:delete_account] then destroy_account</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="65">
-          <span class="hits">22</span>
+        <li class="never" data-hits="" data-linenumber="65">
           
-          <code class="ruby">        elsif command == &#39;WM&#39;</code>
+          
+          <code class="ruby">      when COMMANDS[:exit]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="19" data-linenumber="66">
+          <span class="hits">19</span>
           
-          <code class="ruby">          withdraw_money</code>
+          <code class="ruby">        exit</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="67">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="19" data-linenumber="67">
+          <span class="hits">19</span>
           
-          <code class="ruby">        elsif command == &#39;SM&#39;</code>
+          <code class="ruby">        break</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
-          <code class="ruby">          send_money</code>
+          <code class="ruby">      else output(I18n.t(&#39;error_phrases.wrong_command&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="69">
-          <span class="hits">20</span>
-          
-          <code class="ruby">        elsif command == &#39;DA&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="70">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          destroy_account</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="71">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          exit</code>
-        </li>
-      
-        <li class="covered" data-hits="19" data-linenumber="72">
-          <span class="hits">19</span>
-          
-          <code class="ruby">        elsif command == &#39;exit&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="19" data-linenumber="73">
-          <span class="hits">19</span>
-          
-          <code class="ruby">          exit</code>
-        </li>
-      
-        <li class="covered" data-hits="19" data-linenumber="74">
-          <span class="hits">19</span>
-          
-          <code class="ruby">          break</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="76">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="77">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        output(I18n.t(&#39;error_phrases.wrong_command&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">      end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create_the_first_account</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="74">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    output(I18n.t(&#39;common_phrases.create_first_account&#39;))</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="75">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    return create if input == COMMANDS[:accept]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="77">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    console</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">  def load</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="covered" data-hits="4" data-linenumber="81">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    loop do</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="82">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      return create_the_first_account if !accounts.any?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="84">
+          <span class="hits">4</span>
           
-          <code class="ruby">  def name_input</code>
+          <code class="ruby">      output(I18n.t(&#39;ask_phrases.login&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="83">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="4" data-linenumber="85">
+          <span class="hits">4</span>
           
-          <code class="ruby">    output(I18n.t(&#39;ask_phrases.name&#39;))</code>
+          <code class="ruby">      login = input</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="84">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="4" data-linenumber="86">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @name = input</code>
+          <code class="ruby">      output(I18n.t(&#39;ask_phrases.password&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="85">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="4" data-linenumber="87">
+          <span class="hits">4</span>
           
-          <code class="ruby">    unless @name != &#39;&#39; &amp;&amp; @name[0].upcase == @name[0]</code>
+          <code class="ruby">      password = input</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="86">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="88">
+          <span class="hits">4</span>
           
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.name.first_letter&#39;))</code>
+          <code class="ruby">      if accounts.map { |account| { login: account.login, password: account.password } }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="covered" data-hits="4" data-linenumber="89">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        .include?({ login: login, password: password })</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="88">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="6" data-linenumber="90">
+          <span class="hits">6</span>
           
-          <code class="ruby">    @account.name = @name</code>
+          <code class="ruby">        account = accounts.select { |account| login == account.login }.first</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="covered" data-hits="3" data-linenumber="91">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">        @current_account = account</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="covered" data-hits="3" data-linenumber="92">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">        @account.current_account = @current_account</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="93">
+          <span class="hits">3</span>
           
-          <code class="ruby">  def login_input</code>
+          <code class="ruby">        break</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="92">
-          <span class="hits">22</span>
+        <li class="never" data-hits="" data-linenumber="94">
           
-          <code class="ruby">    output(I18n.t(&#39;ask_phrases.login&#39;))</code>
-        </li>
-      
-        <li class="covered" data-hits="22" data-linenumber="93">
-          <span class="hits">22</span>
           
-          <code class="ruby">    login = input</code>
-        </li>
-      
-        <li class="covered" data-hits="22" data-linenumber="94">
-          <span class="hits">22</span>
-          
-          <code class="ruby">    if login == &#39;&#39;</code>
+          <code class="ruby">      else</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="95">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.login.present&#39;))</code>
+          <code class="ruby">        output(I18n.t(&#39;error_phrases.user_not_exists&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        next</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="97">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="98">
-          <span class="hits">22</span>
+        <li class="never" data-hits="" data-linenumber="98">
           
-          <code class="ruby">    if login.length &lt; 4</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="99">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="99">
+          <span class="hits">3</span>
           
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.login.longer&#39;))</code>
+          <code class="ruby">    main_menu</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="100">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
@@ -3007,22 +3007,22 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="102">
-          <span class="hits">22</span>
-          
-          <code class="ruby">    if login.length &gt; 20</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="103">
+        <li class="covered" data-hits="1" data-linenumber="102">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.login.shorter&#39;))</code>
+          <code class="ruby">  def show_cards</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="103">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @account.show_cards</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="104">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="105">
@@ -3031,22 +3031,22 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="106">
-          <span class="hits">24</span>
-          
-          <code class="ruby">    if accounts.map { |a| a.login }.include? login</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="107">
+        <li class="covered" data-hits="1" data-linenumber="106">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.login.exists&#39;))</code>
+          <code class="ruby">  def create_card</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="107">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    @account.create_card</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="108">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="109">
@@ -3055,118 +3055,118 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="110">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="1" data-linenumber="110">
+          <span class="hits">1</span>
           
-          <code class="ruby">    @account.login = login</code>
+          <code class="ruby">  def destroy_card</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="covered" data-hits="10" data-linenumber="111">
+          <span class="hits">10</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @account.destroy_card</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="113">
+        <li class="covered" data-hits="1" data-linenumber="114">
           <span class="hits">1</span>
           
-          <code class="ruby">  def password_input</code>
+          <code class="ruby">  def withdraw_money</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="114">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="9" data-linenumber="115">
+          <span class="hits">9</span>
           
-          <code class="ruby">    output(I18n.t(&#39;ask_phrases.password&#39;))</code>
+          <code class="ruby">    @account.withdraw_money</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="115">
-          <span class="hits">22</span>
+        <li class="never" data-hits="" data-linenumber="116">
           
-          <code class="ruby">    password = input</code>
-        </li>
-      
-        <li class="covered" data-hits="22" data-linenumber="116">
-          <span class="hits">22</span>
           
-          <code class="ruby">    if password == &#39;&#39;</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="117">
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="118">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.password.present&#39;))</code>
+          <code class="ruby">  def put_money</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="118">
+        <li class="covered" data-hits="14" data-linenumber="119">
+          <span class="hits">14</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">    @account.put_money</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="119">
+        <li class="never" data-hits="" data-linenumber="120">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="121">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="120">
-          <span class="hits">22</span>
-          
-          <code class="ruby">    if password.length &lt; 6</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="121">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.password.longer&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="122">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="123">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="22" data-linenumber="124">
-          <span class="hits">22</span>
-          
-          <code class="ruby">    if password.length &gt; 30</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="125">
+        <li class="covered" data-hits="1" data-linenumber="122">
           <span class="hits">1</span>
           
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.password.shorter&#39;))</code>
+          <code class="ruby">  def send_money</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="126">
+        <li class="missed" data-hits="0" data-linenumber="123">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    @account.send_money</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="124">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="125">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="128">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="1" data-linenumber="126">
+          <span class="hits">1</span>
           
-          <code class="ruby">    @account.password = password</code>
+          <code class="ruby">  def destroy_account</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="127">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    output(I18n.t(&#39;common_phrases.destroy_account&#39;))</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="128">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    remove_account_from_base if input == COMMANDS[:accept]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="129">
@@ -3184,301 +3184,301 @@
         <li class="covered" data-hits="1" data-linenumber="131">
           <span class="hits">1</span>
           
-          <code class="ruby">  def age_input</code>
+          <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="132">
-          <span class="hits">22</span>
+        <li class="never" data-hits="" data-linenumber="132">
           
-          <code class="ruby">    output(I18n.t(&#39;ask_phrases.age&#39;))</code>
+          
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="133">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="1" data-linenumber="133">
+          <span class="hits">1</span>
           
-          <code class="ruby">    age = input</code>
+          <code class="ruby">  def login_input</code>
         </li>
       
         <li class="covered" data-hits="22" data-linenumber="134">
           <span class="hits">22</span>
           
-          <code class="ruby">    if age.to_i.is_a?(Integer) &amp;&amp; age.to_i &gt;= 23 &amp;&amp; age.to_i &lt;= 90</code>
+          <code class="ruby">    output(I18n.t(&#39;ask_phrases.login&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="135">
-          <span class="hits">20</span>
-          
-          <code class="ruby">      age = age.to_i</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="136">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="137">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.age.length&#39;))</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="138">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="22" data-linenumber="139">
+        <li class="covered" data-hits="22" data-linenumber="135">
           <span class="hits">22</span>
           
-          <code class="ruby">    @account.age = age</code>
+          <code class="ruby">    login = input</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="140">
+        <li class="covered" data-hits="22" data-linenumber="136">
+          <span class="hits">22</span>
           
+          <code class="ruby">    @account.errors.push(I18n.t(&#39;account_validation_phrases.login.present&#39;)) if login == &#39;&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="22" data-linenumber="137">
+          <span class="hits">22</span>
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    @account.errors.push(I18n.t(&#39;account_validation_phrases.login.longer&#39;)) if login.length &lt; 4</code>
+        </li>
+      
+        <li class="covered" data-hits="22" data-linenumber="138">
+          <span class="hits">22</span>
+          
+          <code class="ruby">    @account.errors.push(I18n.t(&#39;account_validation_phrases.login.shorter&#39;)) if login.length &gt; 20</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="139">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    @account.errors.push(I18n.t(&#39;account_validation_phrases.login.exists&#39;)) if accounts.map { |a| a.login }.include? login</code>
+        </li>
+      
+        <li class="covered" data-hits="22" data-linenumber="140">
+          <span class="hits">22</span>
+          
+          <code class="ruby">    @account.login = login</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="141">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="142">
+        <li class="covered" data-hits="1" data-linenumber="143">
           <span class="hits">1</span>
           
-          <code class="ruby">  def create_the_first_account</code>
+          <code class="ruby">  def password_input</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="143">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="22" data-linenumber="144">
+          <span class="hits">22</span>
           
-          <code class="ruby">    output(I18n.t(&#39;common_phrases.create_first_account&#39;))</code>
+          <code class="ruby">    output(I18n.t(&#39;ask_phrases.password&#39;))</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="144">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="22" data-linenumber="145">
+          <span class="hits">22</span>
           
-          <code class="ruby">    if input == &#39;y&#39;</code>
+          <code class="ruby">    password = input</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="145">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="22" data-linenumber="146">
+          <span class="hits">22</span>
           
-          <code class="ruby">      return create</code>
+          <code class="ruby">    @account.errors.push(I18n.t(&#39;account_validation_phrases.password.present&#39;)) if password == &#39;&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="146">
+        <li class="covered" data-hits="22" data-linenumber="147">
+          <span class="hits">22</span>
           
-          
-          <code class="ruby">    else</code>
+          <code class="ruby">    @account.errors.push(I18n.t(&#39;account_validation_phrases.password.longer&#39;)) if password.length &lt; 6</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="147">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="22" data-linenumber="148">
+          <span class="hits">22</span>
           
-          <code class="ruby">      return console</code>
+          <code class="ruby">    @account.errors.push(I18n.t(&#39;account_validation_phrases.password.shorter&#39;)) if password.length &gt; 30</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="covered" data-hits="22" data-linenumber="149">
+          <span class="hits">22</span>
           
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="149">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @account.password = password</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="150">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="151">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def load</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="152">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    loop do</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="153">
-          <span class="hits">5</span>
-          
-          <code class="ruby">      if !accounts.any?</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="154">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        return create_the_first_account</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="155">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="156">
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="157">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      output(I18n.t(&#39;ask_phrases.login&#39;))</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="158">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      login = input</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="159">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      output(I18n.t(&#39;ask_phrases.password&#39;))</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="160">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      password = input</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="161">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="8" data-linenumber="162">
-          <span class="hits">8</span>
-          
-          <code class="ruby">      if accounts.map { |a| { login: a.login, password: a.password } }.include?({ login: login, password: password })</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="163">
-          <span class="hits">6</span>
-          
-          <code class="ruby">        a = accounts.select { |a| login == a.login }.first</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="164">
-          <span class="hits">3</span>
-          
-          <code class="ruby">        @current_account = a</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="165">
-          <span class="hits">3</span>
-          
-          <code class="ruby">        @account.current_account = @current_account</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="166">
-          <span class="hits">3</span>
-          
-          <code class="ruby">        break</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="167">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="168">
+        <li class="covered" data-hits="1" data-linenumber="152">
           <span class="hits">1</span>
           
-          <code class="ruby">        output(I18n.t(&#39;error_phrases.user_not_exists&#39;))</code>
+          <code class="ruby">  def age_input</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="169">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="22" data-linenumber="153">
+          <span class="hits">22</span>
           
-          <code class="ruby">        next</code>
+          <code class="ruby">    output(I18n.t(&#39;ask_phrases.age&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="170">
+        <li class="covered" data-hits="22" data-linenumber="154">
+          <span class="hits">22</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">    age = input</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="171">
+        <li class="covered" data-hits="22" data-linenumber="155">
+          <span class="hits">22</span>
+          
+          <code class="ruby">    if age.to_i.is_a?(Integer) &amp;&amp; age.to_i &gt;= 23 &amp;&amp; age.to_i &lt;= 90</code>
+        </li>
+      
+        <li class="covered" data-hits="20" data-linenumber="156">
+          <span class="hits">20</span>
+          
+          <code class="ruby">      age = age.to_i</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="158">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.age.length&#39;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="159">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="172">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="22" data-linenumber="160">
+          <span class="hits">22</span>
           
-          <code class="ruby">    main_menu</code>
+          <code class="ruby">    @account.age = age</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="173">
+        <li class="never" data-hits="" data-linenumber="161">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="174">
+        <li class="never" data-hits="" data-linenumber="162">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="175">
+        <li class="covered" data-hits="1" data-linenumber="163">
           <span class="hits">1</span>
           
-          <code class="ruby">  def show_cards</code>
+          <code class="ruby">  def name_input</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="176">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="22" data-linenumber="164">
+          <span class="hits">22</span>
           
-          <code class="ruby">    @account.show_cards</code>
+          <code class="ruby">    output(I18n.t(&#39;ask_phrases.name&#39;))</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="177">
+        <li class="covered" data-hits="22" data-linenumber="165">
+          <span class="hits">22</span>
+          
+          <code class="ruby">    @name = input</code>
+        </li>
+      
+        <li class="covered" data-hits="22" data-linenumber="166">
+          <span class="hits">22</span>
+          
+          <code class="ruby">    if @name == &#39;&#39; || @name[0].upcase != @name[0]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="167">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @account.errors.push(I18n.t(&#39;account_validation_phrases.name.first_letter&#39;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="168">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="22" data-linenumber="169">
+          <span class="hits">22</span>
+          
+          <code class="ruby">    @account.name = @name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="170">
           
           
           <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="171">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="172">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def remove_account_from_base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="173">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    new_accounts = []</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="174">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    accounts.each do |account|</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="175">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      if account.login == @current_account.login</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="176">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="177">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        new_accounts.push(account)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="178">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="179">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="179">
           
-          <code class="ruby">  def create_card</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="180">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="180">
+          <span class="hits">2</span>
           
-          <code class="ruby">    @account.create_card</code>
+          <code class="ruby">    File.open(@account.file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="181">
@@ -3488,192 +3488,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="182">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="183">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy_card</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="184">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @account.destroy_card</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="185">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="186">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="187">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def withdraw_money</code>
-        </li>
-      
-        <li class="covered" data-hits="9" data-linenumber="188">
-          <span class="hits">9</span>
-          
-          <code class="ruby">    @account.withdraw_money</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="189">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="190">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="191">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def put_money</code>
-        </li>
-      
-        <li class="covered" data-hits="14" data-linenumber="192">
-          <span class="hits">14</span>
-          
-          <code class="ruby">    @account.put_money</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="193">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="194">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="195">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def send_money</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="196">
-          
-          
-          <code class="ruby">    @account.send_money</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="197">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="198">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="199">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy_account</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="200">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    output(I18n.t(&#39;common_phrases.destroy_account&#39;))</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="201">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    a = input</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="202">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    if a == &#39;y&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="203">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      new_accounts = []</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="204">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      accounts.each do |ac|</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="205">
-          <span class="hits">3</span>
-          
-          <code class="ruby">        if ac.login == @current_account.login</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="206">
-          
-          
-          <code class="ruby">        else</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="207">
-          <span class="hits">2</span>
-          
-          <code class="ruby">          new_accounts.push(ac)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="208">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="209">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="210">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      File.open(@account.file_path, &#39;w&#39;) { |f| f.write new_accounts.to_yaml } #Storing</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="211">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="212">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="213">
           
           
           <code class="ruby">end</code>
