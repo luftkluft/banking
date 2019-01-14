@@ -54,18 +54,6 @@ class BaseCard
     (@balance - amount - sender_tax(amount)).positive?
   end
 
-  # def type
-  #   @type
-  # end
-
-  # def balance
-  #   @balance
-  # end
-
-  # def number
-  #   @number
-  # end
-
   private
 
   def calculate_tax(amount, percent_tax, fixed_tax)

@@ -5,7 +5,6 @@ SimpleCov.start do
 end
 
 require_relative '../autoload'
-require_relative '../account'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

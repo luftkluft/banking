@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-13T23:55:43+03:00">2019-01-13T23:55:43+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-01-14T00:21:30+03:00">2019-01-14T00:21:30+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -51,13 +51,23 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#7213832a1eb5eb45ab0581071ca6a23f4fda4c66" class="src_link" title="account.rb">account.rb</a></td>
+        <td class="strong"><a href="#8eeb1328c6f1fb4f51b4ac17e5b7bf220aa5a7b9" class="src_link" title="app/entities/account.rb">app/entities/account.rb</a></td>
         <td class="red strong">60.09 %</td>
         <td>329</td>
         <td>213</td>
         <td>128</td>
         <td>85</td>
         <td>3.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#348aacce04ee922a665026951b519e0384fa35cf" class="src_link" title="app/entities/console.rb">app/entities/console.rb</a></td>
+        <td class="green strong">99.18 %</td>
+        <td>182</td>
+        <td>122</td>
+        <td>121</td>
+        <td>1</td>
+        <td>11.4</td>
       </tr>
       
       <tr>
@@ -100,16 +110,6 @@
         <td>1.0</td>
       </tr>
       
-      <tr>
-        <td class="strong"><a href="#abb282cf51e52c0b25a5738d4ca292ec3d15ae7b" class="src_link" title="console.rb">console.rb</a></td>
-        <td class="green strong">99.18 %</td>
-        <td>182</td>
-        <td>122</td>
-        <td>121</td>
-        <td>1</td>
-        <td>11.4</td>
-      </tr>
-      
     </tbody>
   </table>
 </div>
@@ -126,9 +126,9 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="7213832a1eb5eb45ab0581071ca6a23f4fda4c66">
+        <div class="source_table" id="8eeb1328c6f1fb4f51b4ac17e5b7bf220aa5a7b9">
   <div class="header">
-    <h3>account.rb</h3>
+    <h3>app/entities/account.rb</h3>
     <h4><span class="red">60.09 %</span> covered</h4>
     <div>
       <b>213</b> relevant lines. 
@@ -2119,277 +2119,9 @@
 </div>
 
       
-        <div class="source_table" id="1801c69b0dc90480eee4958aac76e8f3c185da22">
+        <div class="source_table" id="348aacce04ee922a665026951b519e0384fa35cf">
   <div class="header">
-    <h3>app/modules/in_out.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">module InOut</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def input</code>
-        </li>
-      
-        <li class="covered" data-hits="187" data-linenumber="3">
-          <span class="hits">187</span>
-          
-          <code class="ruby">    gets.chomp</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def output(text)</code>
-        </li>
-      
-        <li class="covered" data-hits="278" data-linenumber="7">
-          <span class="hits">278</span>
-          
-          <code class="ruby">    return puts text if text.is_a?(String)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="9" data-linenumber="9">
-          <span class="hits">9</span>
-          
-          <code class="ruby">    text.each do |line|</code>
-        </li>
-      
-        <li class="covered" data-hits="41" data-linenumber="10">
-          <span class="hits">41</span>
-          
-          <code class="ruby">      puts line</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="cade035502395227d1938e9f53123884caa1d094">
-  <div class="header">
-    <h3>app/modules/uploader.rb</h3>
-    <h4><span class="red">40.0 %</span> covered</h4>
-    <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">module Uploader</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def accounts</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="3">
-          
-          
-          <code class="ruby">    if File.exists?(&#39;database/accounts.yml&#39;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="4">
-          
-          
-          <code class="ruby">      YAML.load_file(&#39;database/accounts.yml&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="6">
-          
-          
-          <code class="ruby">      []</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="0eeab5fe642826a0d4fde42851416db4d2221c3e">
-  <div class="header">
-    <h3>autoload.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;yaml&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"># require &#39;pry&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require_relative &#39;config/i18n&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require_relative &#39;app/modules/in_out&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require_relative &#39;app/modules/uploader&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require_relative &#39;console&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require_relative &#39;account&#39;</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="fda5d0250482bf8f88345342630bded2baebe32f">
-  <div class="header">
-    <h3>config/i18n.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;i18n&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">I18n.load_path &lt;&lt; Dir[File.expand_path(&#39;locale/&#39;) + &#39;/*.yml&#39;]</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">I18n.config.available_locales = :en</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="abb282cf51e52c0b25a5738d4ca292ec3d15ae7b">
-  <div class="header">
-    <h3>console.rb</h3>
+    <h3>app/entities/console.rb</h3>
     <h4><span class="green">99.18 %</span> covered</h4>
     <div>
       <b>122</b> relevant lines. 
@@ -3491,6 +3223,274 @@
           
           
           <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="1801c69b0dc90480eee4958aac76e8f3c185da22">
+  <div class="header">
+    <h3>app/modules/in_out.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module InOut</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def input</code>
+        </li>
+      
+        <li class="covered" data-hits="187" data-linenumber="3">
+          <span class="hits">187</span>
+          
+          <code class="ruby">    gets.chomp</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def output(text)</code>
+        </li>
+      
+        <li class="covered" data-hits="278" data-linenumber="7">
+          <span class="hits">278</span>
+          
+          <code class="ruby">    return puts text if text.is_a?(String)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="9">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    text.each do |line|</code>
+        </li>
+      
+        <li class="covered" data-hits="41" data-linenumber="10">
+          <span class="hits">41</span>
+          
+          <code class="ruby">      puts line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="cade035502395227d1938e9f53123884caa1d094">
+  <div class="header">
+    <h3>app/modules/uploader.rb</h3>
+    <h4><span class="red">40.0 %</span> covered</h4>
+    <div>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Uploader</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def accounts</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="3">
+          
+          
+          <code class="ruby">    if File.exists?(&#39;database/accounts.yml&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="4">
+          
+          
+          <code class="ruby">      YAML.load_file(&#39;database/accounts.yml&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
+          
+          <code class="ruby">      []</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="0eeab5fe642826a0d4fde42851416db4d2221c3e">
+  <div class="header">
+    <h3>autoload.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;yaml&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"># require &#39;pry&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;config/i18n&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;app/modules/in_out&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;app/modules/uploader&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;app/entities/console&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;app/entities/account&#39;</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="fda5d0250482bf8f88345342630bded2baebe32f">
+  <div class="header">
+    <h3>config/i18n.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;i18n&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">I18n.load_path &lt;&lt; Dir[File.expand_path(&#39;locale/&#39;) + &#39;/*.yml&#39;]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">I18n.config.available_locales = :en</code>
         </li>
       
     </ol>

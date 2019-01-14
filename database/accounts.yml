@@ -1,7 +1,7 @@
 ---
 - !ruby/object:Account
   errors: []
-  card:
+  cards:
   - :type: virtual
     :number: '2518643239784910'
     :balance: 150.0
@@ -12,7 +12,7 @@
   password: '222222'
 - !ruby/object:Account
   errors: []
-  card:
+  cards:
   - :type: usual
     :number: '1613060849566141'
     :balance: 50.0
@@ -21,3 +21,12 @@
   age: 31
   login: name1
   password: '111111'
+- &1 !ruby/object:Account
+  errors: []
+  cards: []
+  file_path: database/accounts.yml
+  current_account: *1
+  name: Name3
+  age: 33
+  login: name3
+  password: '333333'
