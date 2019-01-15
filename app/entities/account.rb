@@ -1,6 +1,8 @@
 require 'yaml'
 
 class Account
+  EXIT = 'exit'.freeze
+  ACCEPT = 'y'.freeze
   include InOut
   include Uploader
   attr_accessor :login, :name, :age, :cards, :password, :file_path, :errors, :current_account
@@ -53,15 +55,15 @@ class Account
         end
         output(I18n.t('common_phrases.press_exit'))
         first_answer = input
-        break if first_answer == COMMANDS[:exit]
+        break if first_answer == EXIT
 
         if first_answer&.to_i.to_i <= @current_account.cards.length && first_answer&.to_i.to_i > 0
           output(I18n.t('common_phrases.destroy_card',
                         card: (@current_account.cards[first_answer&.to_i.to_i - 1][:number]).to_s))
           second_answer = input
-          if second_answer == COMMANDS[:accept]
+          if second_answer == ACCEPT
             @current_account.cards.delete_at(first_answer&.to_i.to_i - 1)
-            remove_card_from_base
+            remove_card_from_database
             break
           else
             return
@@ -76,7 +78,7 @@ class Account
     end
   end
 
-  def remove_card_from_base
+  def remove_card_from_database
     new_accounts = []
     accounts.each do |account|
       if account.login == @current_account.login
@@ -86,6 +88,22 @@ class Account
       end
     end
     File.open(@file_path, 'w') { |f| f.write new_accounts.to_yaml } # Storing
+  end
+
+  def destroy_account
+    output(I18n.t('common_phrases.destroy_account'))
+    remove_account_from_database if input == ACCEPT
+    exit
+  end
+
+  def remove_account_from_database
+    new_accounts = []
+    accounts.each do |account|
+      next if account.login == @current_account.login
+
+      new_accounts.push(account)
+    end
+    File.open(file_path, 'w') { |f| f.write new_accounts.to_yaml }
   end
 
   def show_cards
@@ -110,7 +128,7 @@ class Account
       output(I18n.t('common_phrases.press_exit'))
       loop do
         answer = input
-        break if answer == COMMANDS[:exit]
+        break if answer == EXIT
 
         if answer&.to_i.to_i <= @current_account.cards.length && answer&.to_i.to_i > 0
           current_card = @current_account.cards[answer&.to_i.to_i - 1]
@@ -172,7 +190,7 @@ class Account
       output(I18n.t('common_phrases.press_exit'))
       loop do
         answer = input
-        break if answer == COMMANDS[:exit]
+        break if answer == EXIT
 
         if answer&.to_i.to_i <= @current_account.cards.length && answer&.to_i.to_i > 0
           current_card = @current_account.cards[answer&.to_i.to_i - 1]
@@ -233,7 +251,7 @@ class Account
       end
       output(I18n.t('common_phrases.press_exit'))
       answer = input
-      exit if answer == COMMANDS[:exit]
+      exit if answer == EXIT
       if answer&.to_i.to_i <= @current_account.cards.length && answer&.to_i.to_i > 0
         sender_card = @current_account.cards[answer&.to_i.to_i - 1]
       else

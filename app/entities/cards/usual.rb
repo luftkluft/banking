@@ -1,27 +1,19 @@
 class Usual < BaseCard
-  TAXES = {
-    put: 2,
-    withdraw: 5,
-    sender: 20
-  }.freeze
-
-  DEFAULT_BALANCE = 50.0
-
-  def initialize(type)
-    @type = type
-    @balance = DEFAULT_BALANCE
+  def initialize
+    @type = 'usual'
+    @balance = 50
     super()
   end
 
   def put_percent_tax
-    TAXES[:put]
+    2
   end
 
   def withdraw_percent_tax
-    TAXES[:withdraw]
+    5
   end
 
   def sender_fixed_tax
-    TAXES[:sender]
+    20
   end
 end

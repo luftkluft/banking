@@ -1,4 +1,7 @@
 class Console
+  COMMANDS = { create: 'create', load: 'load', accept: 'y', exit: 'exit', show_cards: 'SC',
+               delete_account: 'DA', card_create: 'CC', card_destroy: 'DC', put_money: 'PM',
+               withdraw_money: 'WM', send_money: 'SM' }.freeze
   include InOut
   include Uploader
   attr_accessor :current_account, :account
@@ -28,10 +31,10 @@ class Console
       end
       @account.errors = []
     end
-    save_account_to_base
+    save_account_to_database
   end
 
-  def save_account_to_base
+  def save_account_to_database
     @account.cards = []
     new_accounts = accounts << @account
     @current_account = @account
@@ -41,17 +44,7 @@ class Console
   def main_menu
     loop do
       output(I18n.t('main_menu_message_welcome', name: @current_account.name.to_s))
-      # output(I18n.t('common_phrases.create_first_account'))
-      puts 'If you want to:'
-      puts '- show all cards - press SC'
-      puts '- create card - press CC'
-      puts '- destroy card - press DC'
-      puts '- put money on card - press PM'
-      puts '- withdraw money on card - press WM'
-      puts '- send money to another card  - press SM'
-      puts '- destroy account - press `DA`'
-      puts '- exit from account - press `exit`'
-
+      output(I18n.t('main_menu_message'))
       case input
       when COMMANDS[:show_cards] then show_cards
       when COMMANDS[:card_create] then create_card
@@ -83,9 +76,8 @@ class Console
       login = input
       output(I18n.t('ask_phrases.password'))
       password = input
-      if accounts.map { |account| { login: account.login, password: account.password } }
-                 .include?(login: login, password: password)
-        account = accounts.select { |account| login == account.login }.first
+      if accounts.detect { |account| login == account.login && password == account.password }
+        account = accounts.detect { |account| login == account.login }
         @current_account = account
         @account.current_account = @current_account
         break
@@ -122,9 +114,7 @@ class Console
   end
 
   def destroy_account
-    output(I18n.t('common_phrases.destroy_account'))
-    remove_account_from_base if input == COMMANDS[:accept]
-    exit
+    @account.destroy_account
   end
 
   private
@@ -151,12 +141,8 @@ class Console
   def age_input
     output(I18n.t('ask_phrases.age'))
     age = input
-    if age.to_i.is_a?(Integer) && age.to_i >= 23 && age.to_i <= 90
-      age = age.to_i
-    else
-      @account.errors.push(I18n.t('account_validation_phrases.age.length'))
-    end
-    @account.age = age
+    (@account.age = age.to_i) && return if age.to_i.is_a?(Integer) && age.to_i >= 23 && age.to_i <= 90
+    @account.errors.push(I18n.t('account_validation_phrases.age.length'))
   end
 
   def name_input
@@ -166,16 +152,5 @@ class Console
       @account.errors.push(I18n.t('account_validation_phrases.name.first_letter'))
     end
     @account.name = @name
-  end
-
-  def remove_account_from_base
-    new_accounts = []
-    accounts.each do |account|
-      if account.login == @current_account.login
-      else
-        new_accounts.push(account)
-      end
-    end
-    File.open(@account.file_path, 'w') { |f| f.write new_accounts.to_yaml }
   end
 end

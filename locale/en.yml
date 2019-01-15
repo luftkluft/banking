@@ -10,12 +10,12 @@ en:
     "\nWelcome, %{name}\n"
   main_menu_message: [
     'If you want to:\n',
-    '- show all cards - press `SC`\n',
-    '- create card - press `CC`\n',
-    '- destroy card - press `DC`\n',
-    '- put money on card - press `PM`\n',
-    '- withdraw money on card - press `WM`\n',
-    '- send money to another card - press `SM`\n',
+    '- show all cards - press SC\n',
+    '- create card - press CC\n',
+    '- destroy card - press DC\n',
+    '- put money on card - press PM\n',
+    '- withdraw money on card - press WM\n',
+    '- send money to another card  - press SM\n',
     '- destroy account - press `DA`\n',
     '- exit from account - press `exit`\n'
   ]

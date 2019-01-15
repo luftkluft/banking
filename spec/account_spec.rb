@@ -408,7 +408,7 @@ RSpec.describe Account do
     end
 
     it 'with correct outout' do
-      expect(current_subject).to receive_message_chain(:gets, :chomp) {}
+      expect(current_subject.account).to receive_message_chain(:gets, :chomp) {}
       expect do
         expect { current_subject.destroy_account }.to output(COMMON_PHRASES[:destroy_account]).to_stdout
       end.to raise_error SystemExit
@@ -416,10 +416,10 @@ RSpec.describe Account do
 
     context 'when deleting' do
       it 'deletes account if user inputs is y' do
-        expect(current_subject).to receive_message_chain(:gets, :chomp) { success_input }
-        expect(current_subject).to receive(:accounts) { accounts }
+        expect(current_subject.account).to receive_message_chain(:gets, :chomp) { success_input }
+        expect(current_subject.account).to receive(:accounts) { accounts }
         current_subject.account.instance_variable_set(:@file_path, OVERRIDABLE_FILENAME)
-        current_subject.instance_variable_set(:@current_account, instance_double('Account', login: correct_login))
+        current_subject.account.instance_variable_set(:@current_account, instance_double('Account', login: correct_login))
         expect { current_subject.destroy_account }.to raise_error SystemExit
 
         expect(File.exist?(OVERRIDABLE_FILENAME)).to be true
@@ -429,7 +429,7 @@ RSpec.describe Account do
       end
 
       it 'doesnt delete account' do
-        expect(current_subject).to receive_message_chain(:gets, :chomp) { cancel_input }
+        expect(current_subject.account).to receive_message_chain(:gets, :chomp) { cancel_input }
         expect { current_subject.destroy_account }.to raise_error SystemExit
         expect(File.exist?(OVERRIDABLE_FILENAME)).to be false
       end

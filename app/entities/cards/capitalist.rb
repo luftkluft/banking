@@ -1,27 +1,19 @@
 class Capitalist < BaseCard
-  TAXES = {
-    put: 10,
-    withdraw: 4,
-    sender: 10
-  }.freeze
-
-  DEFAULT_BALANCE = 100.0
-
-  def initialize(type)
-    @type = type
-    @balance = DEFAULT_BALANCE
+  def initialize
+    @type = 'capitalist'
+    @balance = 100.0
     super()
   end
 
   def withdraw_percent_tax
-    TAXES[:withdraw]
+    4
   end
 
   def put_fixed_tax
-    TAXES[:put]
+    10
   end
 
   def sender_percent_tax
-    TAXES[:sender]
+    10
   end
 end

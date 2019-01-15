@@ -1,8 +1,6 @@
 require 'yaml'
-# require 'pry'
 require_relative 'config/i18n'
 require_relative 'app/modules/in_out'
 require_relative 'app/modules/uploader'
-require_relative 'app/entities/constants'
 require_relative 'app/entities/console'
 require_relative 'app/entities/account'
