@@ -1,156 +1,156 @@
 class Console
-  COMMANDS = { create: 'create', load: 'load', accept: 'y', exit: 'exit', show_cards: 'SC',
-               delete_account: 'DA', card_create: 'CC', card_destroy: 'DC', put_money: 'PM',
-               withdraw_money: 'WM', send_money: 'SM' }.freeze
-  include InOut
-  include Uploader
+  include Store
   attr_accessor :current_account, :account
-  def initialize(account)
-    @account = account
-  end
+  OPTION = { create: 'create', load: 'load' }.freeze
+  OPTION_CARDS = %w[usual capitalist virtual].freeze
+  COMMANDS = {
+    sc: 'SC',
+    cc: 'CC',
+    dc: 'DC',
+    da: 'DA',
+    exit: 'exit'
+  }.freeze
+  EXIT = 'exit'.freeze
+  YES = 'y'.freeze
 
   def console
-    output(I18n.t('hello_message'))
-    case input
-    when COMMANDS[:create] then create
-    when COMMANDS[:load] then load
+    Message.hello
+    case user_input
+    when OPTION[:create] then create
+    when OPTION[:load] then load
     else exit
     end
   end
 
   def create
     loop do
-      name_input
-      age_input
-      login_input
-      password_input
-      break if @account.errors.empty?
-
-      @account.errors.each do |error|
-        puts error
-      end
-      @account.errors = []
+      @account = Account.new(name_input, age_input, login_input, password_input)
+      account.validate
+      break if account.valid?
+      account.errors.each { |error| puts error }
     end
-    save_account_to_database
-  end
-
-  def save_account_to_database
-    @account.cards = []
-    new_accounts = accounts << @account
-    @current_account = @account
-    File.open(@account.file_path, 'w') { |f| f.write new_accounts.to_yaml } # Storing
-  end
-
-  def main_menu
-    loop do
-      output(I18n.t('main_menu_message_welcome', name: @current_account.name.to_s))
-      output(I18n.t('main_menu_message'))
-      case input
-      when COMMANDS[:show_cards] then show_cards
-      when COMMANDS[:card_create] then create_card
-      when COMMANDS[:card_destroy] then destroy_card
-      when COMMANDS[:put_money] then put_money
-      when COMMANDS[:withdraw_money] then withdraw_money
-      when COMMANDS[:send_money] then send_money
-      when COMMANDS[:delete_account] then destroy_account
-      when COMMANDS[:exit]
-        exit
-        break
-      else output(I18n.t('error_phrases.wrong_command'))
-      end
-    end
-  end
-
-  def create_the_first_account
-    output(I18n.t('common_phrases.create_first_account'))
-    return create if input == COMMANDS[:accept]
-
-    console
+    write_to_file(accounts << account)
+    @current_account = account
+    main_menu
   end
 
   def load
     loop do
-      return create_the_first_account if accounts.none?
+      return create_the_first_account unless accounts.any?
 
-      output(I18n.t('ask_phrases.login'))
-      login = input
-      output(I18n.t('ask_phrases.password'))
-      password = input
-      if accounts.detect { |account| login == account.login && password == account.password }
-        account = accounts.detect { |account| login == account.login }
-        @current_account = account
-        @account.current_account = @current_account
-        break
-      else
-        output(I18n.t('error_phrases.user_not_exists'))
-        next
-      end
+      login = login_input
+      password = password_input
+      break if check_account(login, password)
+
+      Message.load_error
     end
     main_menu
   end
 
-  def show_cards
-    @account.show_cards
+  def create_the_first_account
+    Message.create_first_account
+    user_input == YES ? create : console
+  end
+
+  def main_menu
+    loop do
+      Message.main_menu(@current_account.name)
+      case user_input
+      when COMMANDS[:sc] then show_cards
+      when COMMANDS[:cc] then create_card
+      when COMMANDS[:dc] then destroy_card
+      when COMMANDS[:da] then destroy_account && (return exit)
+      when COMMANDS[:exit] then return exit
+      else
+        Message.wrong_command
+      end
+    end
   end
 
   def create_card
-    @account.create_card
+    loop do
+      Message.create_card_message
+      return Message.create_error unless OPTION_CARDS.include? card_option = user_input
+      CreditCard.new(@current_account, card_option)
+      break
+    end
   end
 
   def destroy_card
-    @account.destroy_card
+    loop do
+      if @current_account.cards.any?
+        Message.want_delete_card
+        display_cards_destroy
+        Message.exit
+        answer = user_input
+        validate_cards(answer)
+        break if answer == EXIT
+      else
+        Message.no_active_cards
+        break
+      end
+    end
   end
 
-  def withdraw_money
-    @account.withdraw_money
-  end
+  def show_cards
+    return Message.no_card unless @current_account.cards.any?
 
-  def put_money
-    @account.put_money
-  end
-
-  def send_money
-    @account.send_money
+    @current_account.cards.each do |card|
+      Message.display_cards(card[:number], card[:type])
+    end
   end
 
   def destroy_account
-    @account.destroy_account
+    Message.destroy_account
+    return destroy_account_in_file(current_account) if user_input == YES
   end
 
   private
 
-  def login_input
-    output(I18n.t('ask_phrases.login'))
-    login = input
-    @account.errors.push(I18n.t('account_validation_phrases.login.present')) if login == ''
-    @account.errors.push(I18n.t('account_validation_phrases.login.longer')) if login.length < 4
-    @account.errors.push(I18n.t('account_validation_phrases.login.shorter')) if login.length > 20
-    @account.errors.push(I18n.t('account_validation_phrases.login.exists')) if accounts.map(&:login).include? login
-    @account.login = login
+  def check_account(login, password)
+    accounts.map { |a| { login: a.login, password: a.password } }.include?(login: login, password: password)
+    @current_account = accounts.select { |a| login == a.login }.first
   end
 
-  def password_input
-    output(I18n.t('ask_phrases.password'))
-    password = input
-    @account.errors.push(I18n.t('account_validation_phrases.password.present')) if password == ''
-    @account.errors.push(I18n.t('account_validation_phrases.password.longer')) if password.length < 6
-    @account.errors.push(I18n.t('account_validation_phrases.password.shorter')) if password.length > 30
-    @account.password = password
-  end
-
-  def age_input
-    output(I18n.t('ask_phrases.age'))
-    age = input
-    (@account.age = age.to_i) && return if age.to_i.is_a?(Integer) && age.to_i >= 23 && age.to_i <= 90
-    @account.errors.push(I18n.t('account_validation_phrases.age.length'))
+  def user_input
+    gets.chomp
   end
 
   def name_input
-    output(I18n.t('ask_phrases.name'))
-    @name = input
-    if @name == '' || @name[0].upcase != @name[0]
-      @account.errors.push(I18n.t('account_validation_phrases.name.first_letter'))
+    Message.enter_name
+    user_input
+  end
+
+  def age_input
+    Message.enter_age
+    user_input.to_i
+  end
+
+  def login_input
+    Message.enter_login
+    user_input
+  end
+
+  def password_input
+    Message.enter_password
+    user_input
+  end
+
+  def validate_cards(answer)
+    if answer&.to_i <= @current_account.cards.length && answer&.to_i > 0
+      Message.answer_destroy_card_show_number(@current_account.cards[answer&.to_i - 1][:number])
+      choose_card_destroy(answer)
+    else
+      Message.wrong_number
     end
-    @account.name = @name
+  end
+
+  def choose_card_destroy(answer)
+    CreditCard.new(@current_account).destroy_card(answer&.to_i - 1) if user_input == YES
+  end
+
+  def display_cards_destroy
+    @current_account.cards.each_with_index { |c, i| Message.display_card_destroy(c[:number], c[:type], i + 1) }
   end
 end
+
