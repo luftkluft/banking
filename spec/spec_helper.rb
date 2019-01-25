@@ -1,10 +1,11 @@
 require 'simplecov'
+require 'undercover'
 
 SimpleCov.start do
   add_filter(%r{\/spec\/})
 end
 
-require_relative '../autoload'
+require_relative '../autoload.rb'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
