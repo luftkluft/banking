@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Message
   class << self
     def display(message)

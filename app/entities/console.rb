@@ -108,8 +108,8 @@ class Console
   private
 
   def check_account(login, password)
-    accounts.map { |a| { login: a.login, password: a.password } }.include?(login: login, password: password)
-    @current_account = accounts.select { |a| login == a.login }.first
+    accounts.map { |account| { login: account.login, password: account.password } }.include?(login: login, password: password)
+    @current_account = accounts.select { |account| login == account.login }.first
   end
 
   def user_input
@@ -137,20 +137,17 @@ class Console
   end
 
   def validate_cards(answer)
-    if answer&.to_i <= @current_account.cards.length && answer&.to_i > 0
-      Message.answer_destroy_card_show_number(@current_account.cards[answer&.to_i - 1][:number])
-      choose_card_destroy(answer)
-    else
-      Message.wrong_number
-    end
+    return Message.wrong_number unless answer&.to_i <= @current_account.cards.length && answer&.to_i > 0
+    Message.answer_destroy_card_show_number(@current_account.cards[answer.to_i - 1][:number])
+    choose_card_destroy(answer)
   end
 
   def choose_card_destroy(answer)
-    CreditCard.new(@current_account).destroy_card(answer&.to_i - 1) if user_input == YES
+    CreditCard.new(@current_account).destroy_card(answer.to_i - 1) if user_input == YES
   end
 
   def display_cards_destroy
-    @current_account.cards.each_with_index { |c, i| Message.display_card_destroy(c[:number], c[:type], i + 1) }
+    @current_account.cards.each_with_index { |card, index| Message.display_card_destroy(card[:number], card[:type], index + 1) }
   end
 end
 
