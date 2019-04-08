@@ -1,78 +1,57 @@
 class Account
-  attr_accessor :name, :password, :login, :age, :cards, :errors
-  include Uploader
-  VALID_RANGE = { age: (23..89), login: (4..20), password: (6..30) }.freeze
-  def initialize
-    @name = ''
-    @age = 0
-    @login = ''
-    @password = ''
+  include Store
+  attr_accessor :login, :age, :name, :cards, :password, :errors
+  MIN_LOGIN = 4
+  MAX_LOGIN = 20
+  MIN_PASSWORD = 6
+  MAX_PASSWORD = 30
+  MIN_AGE = 23
+  MAX_AGE = 90
+  
+  def initialize(name, age, login, password)
+    @name = name
+    @age = age
+    @login = login
+    @password = password
     @cards = []
+  end
+
+  def validate
     @errors = []
+    validate_name
+    validate_age
+    validate_login
+    validate_password
   end
 
   def valid?
-    validate
     @errors.empty?
-  end
-
-  def destroy
-    save_to_db(load_db.reject { |account| account.login == @login })
-  end
-
-  def create_card(type)
-    case type
-    when BaseCard::VALID_TYPES[:usual] then @cards << Usual.new(type)
-    when BaseCard::VALID_TYPES[:capitalist] then @cards << Capitalist.new(type)
-    when BaseCard::VALID_TYPES[:virtual] then @cards << Virtual.new(type)
-    end
-  end
-
-  def find_card_by_index(choice)
-    @cards[choice.to_i - 1]
-  end
-
-  def select_card(input)
-    return unless (1..@cards.size).cover?(input.to_i)
-
-    find_card_by_index(input)
   end
 
   private
 
-  def validate
-    validate_login
-    validate_name
-    validate_age
-    validate_password
-  end
-
   def validate_name
-    @errors << I18n.t('account_validation_phrases.name.first_letter') unless first_letter_uppcase?
+    @errors << Message.capitalize_error if @name.empty? || @name.capitalize != name
   end
 
   def validate_login
-    @errors << I18n.t('account_validation_phrases.login.present') if @login.empty?
-    @errors << I18n.t('account_validation_phrases.login.longer') if @login.size < VALID_RANGE[:login].min
-    @errors << I18n.t('account_validation_phrases.login.shorter') if @login.size > VALID_RANGE[:login].max
-    @errors << I18n.t('account_validation_phrases.login.exists') if account_exists?
+    @errors << Message.login_empty if @login.empty?
+    @errors << Message.login_long_min(MIN_LOGIN) if @login.length < MIN_LOGIN
+    @errors << Message.login_long_max(MAX_LOGIN) if @login.length > MAX_LOGIN
+    @errors << Message.login_exist if accounts.map(&:login).include?(login)
   end
 
   def validate_password
-    @errors << I18n.t('account_validation_phrases.password.present') if @password.empty?
-    @errors << I18n.t('account_validation_phrases.password.longer') if @password.size < VALID_RANGE[:password].min
-    @errors << I18n.t('account_validation_phrases.password.shorter') if @password.size > VALID_RANGE[:password].max
+    @errors << Message.password_empty if @password.empty?
+    @errors << Message.password_long_min(MIN_PASSWORD) if @password.length < MIN_PASSWORD
+    @errors << Message.password_long_max(MAX_PASSWORD) if @password.length > MAX_PASSWORD
   end
 
   def validate_age
-    @errors << I18n.t('account_validation_phrases.age.length') unless (VALID_RANGE[:age]).cover?(@age)
-  end
-
-  def first_letter_uppcase?
-    @name.capitalize[0] == @name[0]
-  end
-
-  def account_exists?
-    load_db.detect { |account_in_db| account_in_db.login == @login }
+    if @age.to_i.is_a?(Integer) && @age.to_i.between?(MIN_AGE, MAX_AGE)
+      @age = age.to_i
+    else
+      @errors << Message.age_between(MIN_AGE, MAX_AGE)
+    end
   end
 end

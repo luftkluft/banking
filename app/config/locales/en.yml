@@ -1,0 +1,49 @@
+en:
+  hello: "Hello, we are RubyG bank!\n
+    - If you want to create account - press `create`\n
+    - If you want to load account - press `load`\n
+    - If you want to exit - press `exit`"
+  enter_name: Enter your name
+  enter_age: Enter your age
+  enter_login: Enter your login
+  enter_password: Enter your password
+  name_errors:
+    capitalize_error: Your name must not be empty and starts with first upcase letter
+  login_errors:
+    login_empty: Login must present
+    login_long_min: Login must be longer then %{min} symbols
+    login_long_max: Login must be shorter then %{max} symbols
+    login_exist: Such account is already exists
+  password_errors:
+    password_empty: Password must present
+    password_long_min: Password must be longer then %{min} symbols
+    password_long_max: Password must be shorter then %{max} symbols
+  age_errors:
+    age_between: 'Your Age must be greeter then %{min} and lower then %{max}'
+  create_first_account: There is no active accounts, do you want to be the first?[y/n]
+  main_menu: "\nWelcome, %{name}
+    If you want to:\n
+    - show all cards - press SC\n
+    - create card - press CC\n
+    - destroy card - press DC\n
+    - destroy account - press `DA`\n
+    - exit from account - press `exit`"
+  create_card_message: "You could create one of 3 card types\n
+    - Usual card. 2% tax on card INCOME. 20$ tax on SENDING money from this card. 5% tax on WITHDRAWING money. For creation this card - press `usual`\n
+    - Capitalist card. 10$ tax on card INCOME. 10% tax on SENDING money from this card. 4$ tax on WITHDRAWING money. For creation this card - press `capitalist`\n
+    - Virtual card. 1$ tax on card INCOME. 1$ tax on SENDING money from this card. 12% tax on WITHDRAWING money. For creation this card - press `virtual`\n
+    - For exit - press `exit`"
+  create_card_error:
+    create_error: "Wrong card type. Try again!\n"
+  destroy_card:
+    want_delete_card: 'If you want to delete:'
+    exit: "press `exit` to exit\n"
+    display_card_destroy: "- %{number}, %{type}, press %{number_card}"
+    answer_destroy_card_show_number: "Are you sure you want to delete %{number}?[y/n]"
+    wrong_number: "You entered wrong number!\n"
+    no_active_cards: "There is no active cards!\n"
+  no_card: "There is no active cards!\n"
+  display_cards: "- %{card_number}, %{card_type}"
+  wrong_command: "Wrong command. Try again!\n"
+  load_error: There is no account with given credentials
+  destroy_account: Are you sure you want to destroy account?[y/n]

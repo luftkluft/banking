@@ -1,4 +1,3 @@
-require_relative 'autoload'
-require_relative 'account'
+require_relative 'autoload.rb'
 
-Account.new.console
+Console.new.console
